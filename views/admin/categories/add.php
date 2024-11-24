@@ -1,4 +1,4 @@
-<?php include_once ROOT_DIR . "views/admin/header.php" ?>
+<?php include_once ROOT_DIR . "/admin/header.php" ?>
 <div>
     <form action="<?= ADMIN_URL . '?ctl=storedm' ?>" method="post" enctype="multipart/form-data">
         <div class="mb-3">
@@ -18,4 +18,4 @@
         </div>
     </form>
 </div>
-<?php include_once ROOT_DIR . "views/admin/footer.php" ?>
+<?php include_once ROOT_DIR . "/admin/footer.php" ?>

@@ -2,6 +2,7 @@
 
 function view($path_view, $data = [])
 {
+    extract($data);
     // Thay dấu chấm (.) thành dấu gạch chéo (/) để chuyển đổi từ dạng 'admin.dashboard' thành 'admin/dashboard'
     $path_view = str_replace(".", "/", $path_view);
     

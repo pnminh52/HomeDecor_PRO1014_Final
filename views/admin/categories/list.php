@@ -1,10 +1,5 @@
-<?php include_once ROOT_DIR . "views/admin/header.php" ?>
-<div>
-    <?php if ($message != '') : ?>
-        <div class="mt-3 mb-3 alert alert-success">
-            <?= $message ?>
-        </div>
-    <?php endif ?>
+<?php include_once ROOT_DIR . "/admin/header.php" ?>
+<div class="container">
     <table class="table">
         <thead>
             <tr>
@@ -21,7 +16,6 @@
                 <tr>
                     <th scope="row"><?= $cate['id'] ?></th>
                     <td><?= $cate['cate_name'] ?></td>
-                    <td><?= $cate['type'] ? 'Thú cưng' : 'Sản phẩm cho thú' ?></td>
 
                     <td>
                         <a href="<?= ADMIN_URL . '?ctl=editdm&id=' . $cate['id'] ?>" class="btn btn-primary">Sửa</a>
@@ -32,4 +26,4 @@
         </tbody>
     </table>
 </div>
-<?php include_once ROOT_DIR . "views/admin/footer.php" ?>
+<?php include_once ROOT_DIR . "/admin/footer.php" ?>

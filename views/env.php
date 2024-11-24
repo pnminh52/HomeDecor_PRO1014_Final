@@ -1,6 +1,6 @@
 <?php
 const HOST      = "localhost";
-const DBNAME    = "banhang";
+const DBNAME    = "homedecorfinal";
 const USERNAME  = "root";
 const PASSWORD  = "";
 const PORT      = 3306;

@@ -12,5 +12,6 @@ require_once __DIR__ ."/../controllers/Admin/AdminCategoryController.php";
 $ctl = $_GET['ctl'] ?? '';
 match ($ctl){
     ''=>(new DashboardController)->index(),
+    'listdm'=> (new AdminCategoryController)->index(),
 };
 
