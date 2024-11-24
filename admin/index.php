@@ -17,5 +17,6 @@ match ($ctl){
     'storedm' => (new AdminCategoryController)->store(),
     'editdm' => (new AdminCategoryController)->edit(),
     'updatedm' => (new AdminCategoryController)->update(),
+    'deletedm' => (new AdminCategoryController)->delete(),
 };
 
