@@ -13,5 +13,7 @@ $ctl = $_GET['ctl'] ?? '';
 match ($ctl){
     ''=>(new DashboardController)->index(),
     'listdm'=> (new AdminCategoryController)->index(),
+    'adddm'=> (new AdminCategoryController)->create(),
+    'storedm' => (new AdminCategoryController)->store(),
 };
 

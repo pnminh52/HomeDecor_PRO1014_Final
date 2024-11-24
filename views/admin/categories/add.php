@@ -9,8 +9,8 @@
 
         <div class="mb-3">
             <label for="">Loại sản phẩm</label> <br>
-            <input type="radio" name="type" value="1" checked id=""> Thú cưng
-            <input type="radio" name="type" value="0" id=""> Sản phẩm cho thú
+            <input type="radio" name="type" value="1" checked id=""> Bàn gỗ
+            <input type="radio" name="type" value="0" id=""> Tủ ly
         </div>
 
         <div class="mb-3">
