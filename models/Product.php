@@ -3,14 +3,14 @@
 class Product extends BaseModel{
     //Get all products information
     public function all(){
-        $sql="SELECT p.*, cate_name FROM products p JOIN categories c ON p.categories_id = c.id";
+        $sql="SELECT p.*, cate_name FROM products p JOIN categories c ON p.category_id = c.id";
         $stmt = $this->conn->prepare($sql);
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
     //Get categories information
     public function listProductCategory($id){
-        $sql="SELECT p.*, cate_name FROM products p JOIN categories c ON p.categories_id = c.id WHERE c.id=:id";
+        $sql="SELECT p.*, cate_name FROM products p JOIN categories c ON p.category_id = c.id WHERE c.id=:id";
         $stmt = $this->conn->prepare($sql);
         $stmt->execute([':id' => $id]);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);

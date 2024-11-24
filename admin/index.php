@@ -7,6 +7,7 @@ require_once __DIR__ ."/../models/Category.php";
 require_once __DIR__ ."/../models/Product.php";
 require_once __DIR__ ."/../controllers/Admin/DashboardController.php";
 require_once __DIR__ ."/../controllers/Admin/AdminCategoryController.php";
+require_once __DIR__ ."/../controllers/Admin/AdminProductController.php";
 
 
 $ctl = $_GET['ctl'] ?? '';
@@ -20,10 +21,10 @@ match ($ctl){
     'updatedm' => (new AdminCategoryController)->update(),
     'deletedm' => (new AdminCategoryController)->delete(),
     //!!Product
-    'listsp'=> (new AdminCategoryController)->index(),
+    'listsp'=> (new AdminProductController)->index(),
     'addsp'=> (new AdminProductController)->add(),
-    'storesp'=> (new AdminCategoryController)->store(),
-    'editsp'=> (new AdminCategoryController)->edit(),
+    'storesp'=> (new AdminProductController)->store(),
+    'editsp'=> (new AdminProductController)->edit(),
     'updatesp'=> (new AdminProductController)->update(),
     'deletesp'=> (new AdminProductController)->delete(),
 };
