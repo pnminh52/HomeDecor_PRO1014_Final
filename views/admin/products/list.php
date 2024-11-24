@@ -22,6 +22,26 @@
             </td>
         </tr>
     </thead>
+    <tbody>
+       <?php foreach ($products as $pro):?>
+        <tr>
+            <th scope="row"><?= $pro['id']?></th>
+            <td><?= $pro['name']?></td>
+            <td><img src="<?= ROOT_URL . $pro['image']?>" width="60" alt=""></td>
+            <td><?= $pro['price']?></td>
+            <td> <?= $pro['status']? 'Đang kinh doanh' : 'Ngừng kinh doanh'?></td>
+            <td><?= $pro['cate_name']?></td>
+            <td>
+                <a href="<?= ADMIN_URL .  '?ctl=edit&id' . $pro['id']?>">
+                    <button class="btn btn-primary">Sửa sản phẩm</button>
+                </a>
+                <a href="<?= ADMIN_URL .  '?ctl=deletesp&id' . $pro['id']?>">
+                    <button class="btn btn-primary" onclick="return confirm('Bạn có muốn xóa sản phẩm không?')">Xóa sản phẩm</button>
+                </a>
+            </td>
+        </tr>
+        <?php endforeach?>
+    </tbody>
   </table>
       
 </div>

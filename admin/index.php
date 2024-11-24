@@ -12,11 +12,19 @@ require_once __DIR__ ."/../controllers/Admin/AdminCategoryController.php";
 $ctl = $_GET['ctl'] ?? '';
 match ($ctl){
     ''=>(new DashboardController)->index(),
+    //!!Category
     'listdm'=> (new AdminCategoryController)->index(),
     'adddm'=> (new AdminCategoryController)->create(),
     'storedm' => (new AdminCategoryController)->store(),
     'editdm' => (new AdminCategoryController)->edit(),
     'updatedm' => (new AdminCategoryController)->update(),
     'deletedm' => (new AdminCategoryController)->delete(),
+    //!!Product
+    'listsp'=> (new AdminCategoryController)->index(),
+    'addsp'=> (new AdminProductController)->add(),
+    'storesp'=> (new AdminCategoryController)->store(),
+    'editsp'=> (new AdminCategoryController)->edit(),
+    'updatesp'=> (new AdminProductController)->update(),
+    'deletesp'=> (new AdminProductController)->delete(),
 };
 
