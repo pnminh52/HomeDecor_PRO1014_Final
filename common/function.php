@@ -2,7 +2,7 @@
 
 function view($path_view, $data=[])
 {
-$path_view = str_replace(",","/", $path_view);
+$path_view = str_replace(".","/", $path_view);
 include_once ROOT_DIR . "views/$path_view.php";
 }
 
