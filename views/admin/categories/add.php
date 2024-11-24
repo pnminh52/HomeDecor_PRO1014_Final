@@ -2,7 +2,7 @@
 <div class="container">
     <form action="<?= ADMIN_URL . '?ctl=storedm' ?>" method="post" enctype="multipart/form-data">
         <div class="bt-3">
-            <label class="form-label" for="">Tên danh mục</label>
+            <label class="form-label" for="">Thêm mới danh mục</label>
             <input type="text" name="cate_name" id="" class="form-control">
 
         </div>

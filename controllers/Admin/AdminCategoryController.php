@@ -21,4 +21,24 @@ class AdminCategoryController {
       
         
     }
+    public function edit(){
+        $id= $_GET['id'];
+        $category=(new Category)->find($id);
+        
+        return view('admin.categories.edit', compact('category'));
+    }
+    public function update(){
+        $data=$_POST;
+        (new Category)-> update($data['id'], $data);
+        $_SESSION['message']="Cập nhật dữ liệu thành công";
+        header("location:" . ADMIN_URL . '?ctl=editdm&id=' . $data['id']);
+       
+    }
+    public function delete(){
+        $data=$_POST;
+        (new Category)-> update($data['id'], $data);
+        $_SESSION['message']="Cập nhật dữ liệu thành công";
+        header("location:" . ADMIN_URL . '?ctl=editdm&id=' . $data['id']);
+       
+    }
 }
