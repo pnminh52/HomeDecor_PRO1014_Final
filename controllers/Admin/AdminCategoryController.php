@@ -16,7 +16,7 @@ class AdminCategoryController {
        
        $data = $_POST;
       (new Category)->create($data);
-      $_SESSION["message"]="Thêm dữ liệu thành công!";
+      $_SESSION['message']="Thêm dữ liệu thành công!";
       header("location:". ADMIN_URL . "?ctl=listdm");
       
         
