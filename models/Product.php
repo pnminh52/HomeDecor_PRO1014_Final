@@ -12,14 +12,14 @@ class Product extends BaseModel{
     public function listProductCategory($id){
         $sql="SELECT p.*, cate_name FROM products p JOIN categories c ON p.category_id = c.id WHERE c.id=:id";
         $stmt = $this->conn->prepare($sql);
-        $stmt->execute([':id' => $id]);
+        $stmt->execute(['id' => $id]);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
     //Add
-    public function create($data){
-        $sql="INSERT INTO 
-        products(name, image, price, description, content, status, category_id) 
-        VALUES(:name, :image, :price, :description, :content, :status, :category_id)";
+    public function create($data)
+    {
+        $sql = "INSERT INTO products(name, image, price, description, content, status, category_id)
+                VALUES(:name, :image, :price, :description, :content, :status, :category_id)";
         $stmt = $this->conn->prepare($sql);
         $stmt->execute($data);
     }

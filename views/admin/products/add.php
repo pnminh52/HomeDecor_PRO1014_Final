@@ -29,11 +29,11 @@
             <input type="number" name="price" id="" class="form-control">
 
         </div>
-        <div class="mb-3">
+        <!-- <div class="mb-3">
             <label for="">Số lượng</label>
             <input type="number" name="quantity" id="" class="form-control">
 
-        </div>
+        </div> -->
         <div class="mb-3">
             <label for="">Trạng thái</label> <br>
             <input type="radio" name="status" value="1" checked id=""> Đang kinh doanh
@@ -45,7 +45,7 @@
         </div>
         <div class="mb-3">
             <label for="">Noi dung</label>
-            <textarea name="description" class="form-control" rows="8"></textarea>
+            <textarea name="content" class="form-control" rows="8"></textarea>
         </div>
         <div class="mb-3">
             <button type="submit" class="btn btn-primary">Thêm mới</button>

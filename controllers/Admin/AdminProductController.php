@@ -25,19 +25,19 @@ class AdminProductController
     public function store()
     {
         $data = $_POST;
-
-        $image = ''; //Trường hợp người dùng không nhập ảnh
+        $image = ''; 
         $file = $_FILES['image'];
         if ($file['size'] > 0) {
             $image = $file['name'];
-            //Upload file
+
             move_uploaded_file($file['tmp_name'], "../images/" . $image);
         }
-        //thêm ảnh vào $data
+
         $data['image'] = $image;
         $product = new Product;
         $product->create($data);
-        header("location: " . ADMIN_URL . "?ctl=listsp");
+        $_SESSION['message']="Thêm dữ liệu thành công";
+        header("Location: " . ADMIN_URL . "?ctl=listsp");
     }
 
 
