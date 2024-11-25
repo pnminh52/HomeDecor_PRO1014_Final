@@ -73,6 +73,11 @@ class AdminProductController
 
     public function delete()
     {
+        $id=$_GET['id'];
+        (new Product)->delete($id);
+        $_SESSION['message']='Xóa dữ liệu thành công';
+        header('Location:' . ADMIN_URL . '?ctl=listsp');
+        die;
        
     }
 }
