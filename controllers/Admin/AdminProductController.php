@@ -41,8 +41,13 @@ class AdminProductController
     }
 
 
-    public function edit()
-    {
+    public function edit(){
+        $id=$_GET['id'];
+        $product=(new Product)->find($id);
+        // dd($product);
+        // die;
+        $categories = (new Category)->all();
+        return view('admin.products.edit', compact('product', 'categories'));
        
     }
 

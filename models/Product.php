@@ -31,6 +31,7 @@ class Product extends BaseModel{
         $stmt = $this->conn->prepare($sql);
         $data['id'] = $id;
         $stmt->execute($data);
+        
     }
     //Delete
     public function delete($id){
@@ -39,9 +40,15 @@ class Product extends BaseModel{
         $stmt->execute([':id' => $id]);
     }
     //Search product by id
-    public function find($id){
-        $sql="SELECT p.*, cate_name FROM products p JOIN categories c ON p.categories_id = c.id WHERE p.id=:id";
+    public function find($id) {
+        $sql = "SELECT p.*, c.cate_name 
+                FROM products p 
+                JOIN categories c 
+                ON p.category_id = c.id 
+                WHERE p.id = :id";
         $stmt = $this->conn->prepare($sql);
         $stmt->execute([':id' => $id]);
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+        
     }
 }
