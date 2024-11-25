@@ -54,6 +54,18 @@ class AdminProductController
 
     public function update()
     {
+        $data=$_POST;
+        dd($data);
+        $file=$_FILES['image'];
+        if($file['image']>0){
+            $image="images/".$file['name'];
+            move_uploaded_file($file['tmp_name'], ROOT_DIR . $image);
+            $data['image']=$image;
+        }
+        (new Product)->update($data['id'], $data);
+        $_SESSION['message']="Cập nhật thành công";
+        header("Location:" . ADMIN_URL . "?ctl=editsp&id=" . $data['id']);
+        die;
        
     }
 
