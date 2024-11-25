@@ -47,6 +47,7 @@ class AdminProductController
         // dd($product);
         // die;
         $categories = (new Category)->all();
+     
         return view('admin.products.edit', compact('product', 'categories'));
        
     }
@@ -57,7 +58,7 @@ class AdminProductController
         $data=$_POST;
         dd($data);
         $file=$_FILES['image'];
-        if($file['image']>0){
+        if($file['size']>0){
             $image="images/".$file['name'];
             move_uploaded_file($file['tmp_name'], ROOT_DIR . $image);
             $data['image']=$image;
