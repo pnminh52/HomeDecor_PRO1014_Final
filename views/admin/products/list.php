@@ -28,7 +28,7 @@
                     <td>
                         <img src="<?= ROOT_URL . 'images/' . $pro['image'] ?>" width="60" alt="">
                     </td>
-                    <td><?= $pro['price'] ?></td>
+                    <td><?= number_format($pro['price']) ?></td>
               
                     <td><?= $pro['status'] ? "Đang kinh doanh" : "Ngừng kinh doanh" ?></td>
                     <td><?= $pro['cate_name'] ?></td>
