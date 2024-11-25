@@ -8,16 +8,16 @@
     </div>
     <h2><?=$category_name?></h2>
     <div class="row g-4">
-        <?php foreach ($products as $pro) : ?>
+        <?php foreach ($products as $product) : ?>
             <div class="col-md-3">
                 <div class="product-box">
-                    <img src="images/<?= $pro['image'] ?>" alt="Product Image" class="product-img">
+                    <img src="images/<?= $product['image'] ?>" alt="Product Image" class="product-img">
                     <div class="product-info">
-                        <a href="<?= ROOT_URL . '?ctl=detail&id=' . $pro['id'] ?>">
-                            <h5 class="product-name"><?= $pro['name'] ?></h5>
+                        <a href="<?= ROOT_URL . '?ctl=detail&id=' . $product['id'] ?>">
+                            <h5 class="product-name"><?= $product['name'] ?></h5>
                         </a>
                         <div>
-                            <span class="product-price"><?= $pro['price'] ?></span>
+                            <span class="product-price"><?= $product['price'] ?></span>
 
                         </div>
                         <div class="product-buttons">
