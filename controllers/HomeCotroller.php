@@ -6,7 +6,8 @@ class HomeCotroller {
         $tables = $product->listProductCategoryHome(2);
         $cupboards = $product->listProductCategoryHome(4);
         $title = "Trang chủ website nội thất";
-        return view("clients.home", compact('tables','cupboards', 'title'));
+        $categories=(new Category)-> all();
+        return view("clients.home", compact('tables','cupboards', 'title','categories'));
 
 
     }
