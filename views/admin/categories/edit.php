@@ -1,4 +1,4 @@
-<?php include_once ROOT_DIR . "/admin/header.php" ?>
+<?php include_once ROOT_DIR . "views/admin/header.php" ?>
 <div>
 <?php if(isset($_SESSION['message']) && $_SESSION['message'] != ''): ?>
         <div class="mt-3 mb-3 alert alert-success">
@@ -18,4 +18,4 @@
         </div>
     </form>
 </div>
-<?php include_once ROOT_DIR . "/admin/footer.php" ?>
+<?php include_once ROOT_DIR . "views/admin/footer.php" ?>

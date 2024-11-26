@@ -1,4 +1,4 @@
-<?php include_once ROOT_DIR . "/admin/header.php"; ?>
+<?php include_once ROOT_DIR . "views/admin/header.php"; ?>
 
 <div class="container">
     <?php if(isset($_SESSION['message']) && $_SESSION['message'] != ''): ?>
@@ -34,4 +34,4 @@
     </table>
 </div>
 
-<?php include_once ROOT_DIR . "/admin/footer.php"; ?>
+<?php include_once ROOT_DIR . "views/admin/footer.php"; ?>

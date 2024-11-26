@@ -29,7 +29,7 @@
                             <a class="nav-link" href="<?= ADMIN_URL . '?ctl=listsp' ?>">Sản phẩm</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link"href="/homedecorfinal/views/">Client</a>
+                            <a class="nav-link"href="/homedecorfinal/">Client</a>
                         </li>
 
                     </ul>

@@ -1,4 +1,4 @@
-<?php include_once ROOT_DIR . "/clients/header.php" ?>
+<?php include_once ROOT_DIR . "views/clients/header.php" ?>
 
 <div class="container mt-5">
         <div class="row">
@@ -67,4 +67,4 @@
    
 </div>
 </div>
-<?php include_once ROOT_DIR . "/clients/footer.php" ?>
+<?php include_once ROOT_DIR . "views/clients/footer.php" ?>

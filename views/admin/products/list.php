@@ -1,4 +1,4 @@
-<?php include_once ROOT_DIR . "/admin/header.php" ?>
+<?php include_once ROOT_DIR . "views/admin/header.php" ?>
 <div>
     <?php if ($message != '') : ?>
         <div class="mt-3 mb-3 alert alert-success">
@@ -41,4 +41,4 @@
         </tbody>
     </table>
 </div>
-<?php include_once ROOT_DIR . "/admin/footer.php" ?>
+<?php include_once ROOT_DIR . "views/admin/footer.php" ?>

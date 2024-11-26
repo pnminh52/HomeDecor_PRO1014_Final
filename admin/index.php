@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once __DIR__ . "/../views/env.php";
+require_once __DIR__ . "/../env.php";
 require_once __DIR__ ."/../common/function.php";
 require_once __DIR__ ."/../models/BaseModel.php";
 require_once __DIR__ ."/../models/Category.php";
