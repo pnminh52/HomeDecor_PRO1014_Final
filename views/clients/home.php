@@ -1,4 +1,4 @@
-<?php include_once ROOT_DIR . "/views/clients/header.php"?>
+<?php include_once ROOT_DIR . "/clients/header.php"?>
 <div class="container mt-5">
 <h2>Bàn gỗ</h2>
 <div class="row g-4">
@@ -47,4 +47,4 @@
     <?php endforeach?>
 </div>
 </div>
-<?php include_once ROOT_DIR . "/views/clients/footer.php"?>
+<?php include_once ROOT_DIR . "/clients/footer.php"?>
