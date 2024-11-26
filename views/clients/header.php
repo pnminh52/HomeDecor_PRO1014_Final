@@ -25,14 +25,14 @@
                             <a class="nav-link" href="">Giới thiệu</a>
                         </li>
                         <li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-        Sản phẩm
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-        <?php foreach ($categories as $cate): ?>
-        <li>
-            <a href="<?= ROOT_URL . '?ctl=category&id=' . $cate['id'] ?>" class="dropdown-item"><?= htmlspecialchars($cate['cate_name']) ?></a>
-        </li>
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Sản phẩm
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <?php foreach ($categories as $cate): ?>
+                            <li>
+                                <a href="<?= ROOT_URL . '?ctl=category&id=' . $cate['id'] ?>" class="dropdown-item"><?= htmlspecialchars($cate['cate_name']) ?></a>
+                            </li>
         <?php endforeach; ?>
     </ul>
 </li>
