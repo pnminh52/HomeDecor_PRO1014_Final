@@ -12,16 +12,14 @@
     );
   }
    //Product details function
-  public function show(){
-    $id = $_GET['id'];
-    $product = (new Product)->find($id);
-    $title=$product['name'];
-    $categories=(new Category)->all();
-    return view(
-      'clients.product.details',
-      compact('product','title','categories')
-    );
-   }
+   public function show(){
+    $id = $_GET['id']; 
+    $product = (new Product)->find($id); 
+    $title = $product['name']; 
+    $categories = (new Category)->all();
+    $productReleads= (new Product)->listProductRelead($product['category_id'],$id); 
+    return view('clients.products.details', compact('product', 'title', 'categories','productReleads')); 
+}
+// Product relead function
+
  }
-
-
