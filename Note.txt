@@ -1,6 +1,0 @@
-. Quy trình hoạt động của mô hình MVC:
-    Người dùng gửi yêu cầu (request) qua giao diện người dùng (UI).
-    Controller nhận yêu cầu, xử lý và gửi yêu cầu tới Model.
-    Model thực hiện logic nghiệp vụ và trả về dữ liệu cho Controller.
-    Controller chuyển dữ liệu tới View.
-    View định dạng dữ liệu và trả lại giao diện hiển thị cho người dùng.
