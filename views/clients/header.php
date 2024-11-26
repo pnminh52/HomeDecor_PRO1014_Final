@@ -23,10 +23,10 @@
                             <a class="nav-link active" aria-current="page" href="<?= ADMIN_URL ?>">Dashboard</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="<?= ADMIN_URL . '?ctl=listdm' ?>">Danh mục</a>
+                            <a class="nav-link" href="">Giới thiệu</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="<?= ADMIN_URL . '?ctl=listsp' ?>">Sản phẩm</a>
+                            <a class="nav-link" href="">Sản phẩm</a>
                         </li>
 
                     </ul>
