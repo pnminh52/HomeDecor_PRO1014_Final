@@ -6,7 +6,7 @@ class HomeController
         $product = new Product;
         $table = $product->listProductCategory(1);
         $cupboard = $product->listProductCategory(2);
-        $title="Trang chủ ưebsite nội thất";
+        $title="Trang chủ website nội thất";
         return view("client.home", compact('table','cupboard','title'));
         
     }
