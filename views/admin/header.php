@@ -13,7 +13,7 @@
     <div class="container w-100">
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
-                <a class="navbar-brand" href="<?=ROOT_URL?>">HomeDecor</a>
+                <a class="navbar-brand" href="/homedecorfinal/admin/">HomeDecor</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -27,6 +27,9 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="<?= ADMIN_URL . '?ctl=listsp' ?>">Sản phẩm</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link"href="/homedecorfinal/views/">Client</a>
                         </li>
 
                     </ul>
