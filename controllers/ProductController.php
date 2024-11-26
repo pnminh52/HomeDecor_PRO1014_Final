@@ -11,4 +11,17 @@
         compact('products','categories', 'category_name', 'tittle')
     );
   }
+   //Product details function
+  public function show(){
+    $id = $_GET['id'];
+    $product = (new Product)->find($id);
+    $title=$product['name'];
+    $categories=(new Category)->all();
+    return view(
+      'clients.product.details',
+      compact('product','title','categories')
+    );
+   }
  }
+
+

@@ -12,6 +12,7 @@ $ctl=$_GET['ctl']??'';
 match ($ctl){
     ''=>(new HomeCotroller)->index(),
     'category' => (new ProductController)->list(),
+    'detail' => (new ProductController)->show(),
 
 
 };
