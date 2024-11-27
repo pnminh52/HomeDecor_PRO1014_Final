@@ -63,4 +63,15 @@ class Product extends BaseModel{
         return $stmt->fetch(PDO::FETCH_ASSOC);
         
     }
+    public function search($query) {
+        $sql = "SELECT p.*, c.cate_name 
+                FROM products p 
+                JOIN categories c ON p.category_id = c.id 
+                WHERE p.name LIKE :query";
+        $stmt = $this->conn->prepare($sql); // Chuẩn bị câu truy vấn
+        $stmt->execute(['query' => '%' . $query . '%']); // Gán tham số truy vấn
+        return $stmt->fetchAll(PDO::FETCH_ASSOC); // Trả về danh sách kết quả
+    }
+    
+    
 }
