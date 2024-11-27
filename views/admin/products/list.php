@@ -12,7 +12,7 @@
                 <th scope="col">Name</th>
                 <th scope="col">Image</th>
                 <th scope="col">Price</th>
-                <!-- <th scope="col">Quantity</th> -->
+                <th scope="col">Quantity</th> 
                 <th scope="col">Status</th>
                 <th scope="col">Category</th>
                 <th>
@@ -29,6 +29,7 @@
                         <img src="<?= ROOT_URL . 'images/' . $pro['image'] ?>" width="60" alt="">
                     </td>
                     <td><?= number_format($pro['price']) ?></td>
+                    <td><?= $pro['quantity'] ?></td>
               
                     <td><?= $pro['status'] ? "Đang kinh doanh" : "Ngừng kinh doanh" ?></td>
                     <td><?= $pro['cate_name'] ?></td>

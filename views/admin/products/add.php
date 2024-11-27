@@ -29,11 +29,11 @@
             <input type="number" step="0.1" name="price" id="" class="form-control">
 
         </div>
-        <!-- <div class="mb-3">
+        <div class="mb-3">
             <label for="">Số lượng</label>
             <input type="number" name="quantity" id="" class="form-control">
 
-        </div> -->
+        </div> 
         <div class="mb-3">
             <label for="">Trạng thái</label> <br>
             <input type="radio" name="status" value="1" checked id=""> Đang kinh doanh

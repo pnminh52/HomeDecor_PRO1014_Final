@@ -30,15 +30,15 @@ class Product extends BaseModel{
     //Add
     public function create($data)
     {
-        $sql = "INSERT INTO products(name, image, price, description, content, status, category_id)
-                VALUES(:name, :image, :price, :description, :content, :status, :category_id)";
+        $sql = "INSERT INTO products(name, image, price, quantity, description, content, status, category_id)
+                VALUES(:name, :image, :price, :quantity, :description, :content, :status, :category_id)";
         $stmt = $this->conn->prepare($sql);
         $stmt->execute($data);
     }
     //Update
     public function update($id, $data){
         $sql="UPDATE 
-        products SET name=:name, image=:image, price=:price, description=:description, content=:content, status=:status, category_id=:category_id
+        products SET name=:name, image=:image, price=:price, quantity=:quantity, description=:description, content=:content, status=:status, category_id=:category_id
         WHERE id =:id";
         $stmt = $this->conn->prepare($sql);
         $data['id'] = $id;
