@@ -23,7 +23,7 @@
     $_SESSION['URI'] = $_SERVER['REQUEST_URI'];
 
     return view(
-        'clients.products.detail', compact('product', 'title', 'categories','productReleads')); 
+        'clients.products.details', compact('product', 'title', 'categories','productReleads')); 
 }
 
 public function searchs() {
