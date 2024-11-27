@@ -39,9 +39,10 @@
             <input type="number" name="price" step="0.1" value="<?=$product['price']?>" class="form-control">
 
         </div>
+       
         <div class="mb-3">
             <label for="">Số lượng</label>
-            <input type="number" name="quantity" value="<?=$product['quantity']?>"  class="form-control">
+            <input type="number" name="quantity" value="<?=$product['quantity']?>" min="0"  class="form-control">
 
         </div> 
         <div class="mb-3">
