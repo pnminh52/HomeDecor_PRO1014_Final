@@ -41,7 +41,7 @@
         </div>
         <div class="mb-3">
             <label for="">Số lượng</label>
-            <input type="number" name="quantity" id="" class="form-control">
+            <input type="number" name="quantity" value="<?=$product['quantity']?>"  class="form-control">
 
         </div> 
         <div class="mb-3">
