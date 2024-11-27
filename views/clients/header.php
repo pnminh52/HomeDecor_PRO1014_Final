@@ -51,6 +51,7 @@
     <div class="top-bar">
         <div class="container">
             <small>Chào mừng bạn đến với HomeDecor!</small>
+            
             <small>Hotline: 0123-456-789</small>
         </div>
     </div>

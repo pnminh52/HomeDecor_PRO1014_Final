@@ -9,23 +9,41 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 </head>
 <body>
+<style>
+
+    .text-matcha {
+        color:rgb(65, 49, 36); 
+    }
+
+    .carousel-caption {
+        top: 8%; 
+    }
+
+    .carousel-caption h5 {
+        font-size: 2.5rem; 
+    }
+
+    .carousel-caption p {
+        font-size: 1rem; 
+    }
+</style>
 
     <?php include_once ROOT_DIR . "views/clients/header.php"?>
 
     <div id="productSlideshow" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
             <?php 
-            $images = ['1.jpg', '2.jpg'];
+            $images = ['3.jpg', '4.jpg'];
             foreach ($images as $index => $image): ?>
             <div class="carousel-item <?= $index === 0 ? 'active' : '' ?>">
                 <img src="<?= ROOT_URL . 'images/clients/' . $image ?>" class="d-block w-100" alt="Slideshow Image <?= $index + 1 ?>">
             </div>
             <?php endforeach; ?>
         </div>
-        <div class="carousel-caption d-none d-md-block">
-            <h5>HomeDecor</h5>
-            <p>Khám phá các sản phẩm nổi bật.</p>
-        </div>
+        <div class="carousel-caption d-none d-md-block text-center">
+        <h5 class="text-matcha font-weight-bold">BỘ SƯU TẬP MÙA THU</h5>
+        <p class="text-matcha">Vẻ đẹp dịu êm trong từng đường nét</p>
+    </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#productSlideshow" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
@@ -39,10 +57,15 @@
     <div class="container mt-5">
         <style>
             .carousel-inner img {
-                height: 400px; 
+                height: 450px; 
                 object-fit: cover; 
                 width: 100%; 
             }
+            .carousel-control-prev,
+    .carousel-control-next {
+        opacity: 0; 
+        
+    }
         </style>
 
         <!-- Product Listings -->
