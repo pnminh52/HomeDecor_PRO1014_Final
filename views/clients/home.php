@@ -12,7 +12,7 @@
  <div id="productSlideshow" class="carousel slide mb-5" data-bs-ride="carousel">
         <div class="carousel-inner">
             <?php 
-            $images = ['1.jpg', '2.jpg']; // Danh sách tên ảnh
+            $images = ['1.jpg', '2.jpg'];
             foreach ($images as $index => $image): ?>
             <div class="carousel-item <?= $index === 0 ? 'active' : '' ?>">
                 <img src="<?= ROOT_URL . 'images/clients/' . $image ?>" class="d-block w-100" alt="Slideshow Image <?= $index + 1 ?>">
