@@ -39,11 +39,11 @@
             <input type="number" name="price" step="0.1" value="<?=$product['price']?>" class="form-control">
 
         </div>
-        <!-- <div class="mb-3">
+        <div class="mb-3">
             <label for="">Số lượng</label>
-            <input type="number" name="quantity" id="" class="form-control">
+            <input type="number" name="quantity" value="<?=$product['quantity']?>"  class="form-control">
 
-        </div> -->
+        </div> 
         <div class="mb-3">
             <label for="">Trạng thái</label> <br>
             <input type="radio" name="status" value="1" <?=$product['status'] ? 'checked':''?> checked id=""> Đang kinh doanh
