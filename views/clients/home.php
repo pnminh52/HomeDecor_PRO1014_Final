@@ -41,7 +41,7 @@
     text-align: center;
     padding: 10px;
     transition: border 0.3s ease; /* Chỉ có border sẽ chuyển động mượt mà */
-    border: 2px solid transparent; /* Border mặc định là transparent */
+    border: 1px solid transparent; /* Border mặc định là transparent */
     background-color: #fff; 
     height: 100%; 
     display: flex;
@@ -50,7 +50,7 @@
 }
 
 .product-box:hover {
-    border: 2px solid #ddd; /* Khi hover, border sẽ hiển thị */
+    border: 1px solid #ddd; /* Khi hover, border sẽ hiển thị */
 }
 
 
@@ -71,7 +71,13 @@
     margin-top: 10px; 
 }
 
-
+h2 {
+        font-size: 1.5rem !important; 
+        font-weight: bold !important;
+        text-align: center !important;
+        margin-top: 30px !important;
+        margin-bottom: 30px !important;
+    }
 
 
 .product-name {
@@ -156,7 +162,9 @@
             <?php foreach ($cupboards as $cupboard): ?>
                 <div class="col-md-3">
     <div class="product-box">
-        <img src="<?= ROOT_URL .  $cupboard['image']?>" alt="Product Image" class="product-img">
+   
+
+        <img src="<?= ROOT_URL . '/productimages/' .  $cupboard['image']?>" alt="Product Image" class="product-img">
         <div class="product-info">
             <a href="<?=ROOT_URL.'?ctl=details&id=' . $cupboard['id']?>" class="product-name">
                 <h5><?= $cupboard['name'] ?></h5>
@@ -174,6 +182,7 @@
 </div>
             <?php endforeach?>
         </div>
+        
     </div>
 
     <?php include_once ROOT_DIR . "views/clients/footer.php"?>
