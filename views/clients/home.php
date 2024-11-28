@@ -41,7 +41,7 @@
     text-align: center;
     padding: 10px;
     transition: border 0.3s ease; /* Chỉ có border sẽ chuyển động mượt mà */
-    border: 1px solid transparent; /* Border mặc định là transparent */
+    border: 2px solid transparent; /* Border mặc định là transparent */
     background-color: #fff; 
     height: 100%; 
     display: flex;
@@ -50,7 +50,7 @@
 }
 
 .product-box:hover {
-    border: 1px solid #ddd; /* Khi hover, border sẽ hiển thị */
+    border: 2px solid #ddd; /* Khi hover, border sẽ hiển thị */
 }
 
 
@@ -102,7 +102,7 @@
             $images = ['3.jpg', '4.jpg'];
             foreach ($images as $index => $image): ?>
             <div class="carousel-item <?= $index === 0 ? 'active' : '' ?>">
-                <img src="<?= ROOT_URL . 'images/clients/' . $image ?>" class="d-block w-100" alt="Slideshow Image <?= $index + 1 ?>">
+                <img src="<?= ROOT_URL . '/bannerimages/' . $image ?>" class="d-block w-100" alt="Slideshow Image <?= $index + 1 ?>">
             </div>
             <?php endforeach; ?>
         </div>
@@ -156,7 +156,7 @@
         <img src="<?= ROOT_URL .  $cupboard['image']?>" alt="Product Image" class="product-img">
         <div class="product-info">
             <a href="<?=ROOT_URL.'?ctl=details&id=' . $cupboard['id']?>" class="product-name">
-                <h5><?= $table['name'] ?></h5>
+                <h5><?= $cupboard['name'] ?></h5>
             </a>
             <div>
                 <span class="product-price"><?= number_format($cupboard['price'])?>đ</span>
