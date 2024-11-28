@@ -156,16 +156,16 @@
         <img src="<?= ROOT_URL .  $cupboard['image']?>" alt="Product Image" class="product-img">
         <div class="product-info">
             <a href="<?=ROOT_URL.'?ctl=details&id=' . $cupboard['id']?>" class="product-name">
-                <h5><?= $cupboard['name'] ?></h5>
+                <h5><?= $table['name'] ?></h5>
             </a>
             <div>
                 <span class="product-price"><?= number_format($cupboard['price'])?>đ</span>
             </div>
         </div>
         <div class="product-buttons d-flex">
-    <a class="btn btn-outline-success me-2" href="#">Thêm vào giỏ hàng</a>
-    <a href="<?= ROOT_URL.'?ctl=details&id=' . $cupboard['id'] ?>" class="btn btn-outline-primary">Xem thêm</a>
+    <a class="btn btn-outline-dark " href="<?= ROOT_URL.'?ctl=details&id=' . $cupboard['id'] ?>"  style="border-radius: 0;">Xem thêm</a>
 </div>
+
 
     </div>
 </div>
