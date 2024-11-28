@@ -36,6 +36,61 @@
         opacity: 0; 
         
     }
+
+    .product-box {
+    text-align: center;
+    padding: 10px;
+    transition: border 0.3s ease; /* Chỉ có border sẽ chuyển động mượt mà */
+    border: 1px solid transparent; /* Border mặc định là transparent */
+    background-color: #fff; 
+    height: 100%; 
+    display: flex;
+    flex-direction: column; 
+    justify-content: space-between; 
+}
+
+.product-box:hover {
+    border: 1px solid #ddd; /* Khi hover, border sẽ hiển thị */
+}
+
+
+.product-info {
+    margin-top: 10px; 
+}
+
+.product-img {
+    width: 100%;
+    height: auto;
+    max-height: 150px; 
+    object-fit: cover; 
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.product-buttons {
+    margin-top: 10px; 
+}
+
+
+
+
+.product-name {
+    font-size: 1rem;
+    font-weight: lighter; 
+    margin: 10px 0;
+    color: black;
+    text-decoration: none;
+    font-family: Arial, sans-serif; 
+}
+
+
+
+.product-price {
+    color: black;
+    font-size: 1rem;
+    font-weight: lighter;
+}
+
 </style>
 
 
@@ -71,43 +126,49 @@
         <h2>Bàn gỗ</h2>
         <div class="row g-4">
             <?php foreach ($tables as $table): ?>
-            <div class="col-md-3">
-                <div class="product-box">
-                    <img src="<?= ROOT_URL .  $table['image']?>" alt="Product Image" class="product-img">
-                    <div class="product-info">
-                        <a href="<?=ROOT_URL.'?ctl=details&id=' . $table['id']?>">
-                            <h5 class="product-name"><?= $table['name']?></h5>
-                        </a>
-                        <div>
-                            <span class="product-price"><?= number_format($table['price'])?>đ</span>
-                        </div>
-                        <div class="product-buttons">
-                            <a class="btn btn-outline-success">Thêm vào giỏ hàng</a>
-                        </div>
-                    </div>
-                </div>
+                <div class="col-md-3">
+    <div class="product-box">
+        <img src="<?= ROOT_URL .  $table['image']?>" alt="Product Image" class="product-img">
+        <div class="product-info">
+            <a href="<?=ROOT_URL.'?ctl=details&id=' . $table['id']?>" class="product-name">
+                <h5><?= $table['name'] ?></h5>
+            </a>
+            <div>
+                <span class="product-price"><?= number_format($table['price'])?>đ</span>
             </div>
+        </div>
+        <div class="product-buttons d-flex">
+    <a class="btn btn-outline-dark " href="<?= ROOT_URL.'?ctl=details&id=' . $table['id'] ?>"  style="border-radius: 0;">Xem thêm</a>
+</div>
+
+
+    </div>
+</div>
+
+
             <?php endforeach?>
         </div>
         <h2>Tủ ly</h2>
         <div class="row g-4">
             <?php foreach ($cupboards as $cupboard): ?>
-            <div class="col-md-3">
-                <div class="product-box">
-                    <img src="<?= ROOT_URL .  $cupboard['image']?>" alt="Product Image" class="product-img">
-                    <div class="product-info">
-                        <a href="#">
-                            <h5 class="product-name"><?= $cupboard['name']?></h5>
-                        </a>
-                        <div>
-                            <span class="product-price"><?= number_format($cupboard['price'])?>₫</span>
-                        </div>
-                        <div class="product-buttons">
-                            <button class="btn btn-outline-success">Thêm vào giỏ hàng</button>
-                        </div>
-                    </div>
-                </div>
+                <div class="col-md-3">
+    <div class="product-box">
+        <img src="<?= ROOT_URL .  $cupboard['image']?>" alt="Product Image" class="product-img">
+        <div class="product-info">
+            <a href="<?=ROOT_URL.'?ctl=details&id=' . $cupboard['id']?>" class="product-name">
+                <h5><?= $cupboard['name'] ?></h5>
+            </a>
+            <div>
+                <span class="product-price"><?= number_format($cupboard['price'])?>đ</span>
             </div>
+        </div>
+        <div class="product-buttons d-flex">
+    <a class="btn btn-outline-success me-2" href="#">Thêm vào giỏ hàng</a>
+    <a href="<?= ROOT_URL.'?ctl=details&id=' . $cupboard['id'] ?>" class="btn btn-outline-primary">Xem thêm</a>
+</div>
+
+    </div>
+</div>
             <?php endforeach?>
         </div>
     </div>
