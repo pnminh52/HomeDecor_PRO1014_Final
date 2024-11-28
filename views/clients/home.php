@@ -26,7 +26,18 @@
     .carousel-caption p {
         font-size: 1rem; 
     }
+    .carousel-inner img {
+                height: 450px; 
+                object-fit: cover; 
+                width: 100%; 
+            }
+            .carousel-control-prev,
+    .carousel-control-next {
+        opacity: 0; 
+        
+    }
 </style>
+
 
     <?php include_once ROOT_DIR . "views/clients/header.php"?>
 
@@ -55,20 +66,8 @@
     </div>
 
     <div class="container mt-5">
-        <style>
-            .carousel-inner img {
-                height: 450px; 
-                object-fit: cover; 
-                width: 100%; 
-            }
-            .carousel-control-prev,
-    .carousel-control-next {
-        opacity: 0; 
-        
-    }
-        </style>
+      
 
-        <!-- Product Listings -->
         <h2>Bàn gỗ</h2>
         <div class="row g-4">
             <?php foreach ($tables as $table): ?>
@@ -76,7 +75,7 @@
                 <div class="product-box">
                     <img src="<?= ROOT_URL .  $table['image']?>" alt="Product Image" class="product-img">
                     <div class="product-info">
-                        <a href="<?=ROOT_URL.'?ctl=detail&id=' . $table['id']?>">
+                        <a href="<?=ROOT_URL.'?ctl=details&id=' . $table['id']?>">
                             <h5 class="product-name"><?= $table['name']?></h5>
                         </a>
                         <div>
@@ -90,7 +89,6 @@
             </div>
             <?php endforeach?>
         </div>
-
         <h2>Tủ ly</h2>
         <div class="row g-4">
             <?php foreach ($cupboards as $cupboard): ?>
