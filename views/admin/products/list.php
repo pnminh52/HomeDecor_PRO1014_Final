@@ -26,7 +26,7 @@
                     <th scope="row"><?= $pro['id'] ?></th>
                     <td><?= $pro['name'] ?></td>
                     <td>
-                        <img src="<?= ROOT_URL . 'images/' . $pro['image'] ?>" width="60" alt="">
+                        <img src="<?= ROOT_URL . '/views/clients/productimages/' . $pro['image'] ?>" width="60" alt="">
                     </td>
                     <td><?= number_format($pro['price']) ?></td>
                     <td><?= $pro['quantity'] ?></td>

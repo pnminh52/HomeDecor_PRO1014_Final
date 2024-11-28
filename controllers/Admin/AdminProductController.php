@@ -30,7 +30,7 @@ class AdminProductController
         if ($file['size'] > 0) {
             $image = $file['name'];
 
-            move_uploaded_file($file['tmp_name'], "../images/" . $image);
+            move_uploaded_file($file['tmp_name'], "../productimages/" . $image);
         }
 
         $data['image'] = $image;
@@ -59,7 +59,7 @@ class AdminProductController
         dd($data);
         $file=$_FILES['image'];
         if($file['size']>0){
-            $image="images/".$file['name'];
+            $image="productimages/".$file['name'];
             move_uploaded_file($file['tmp_name'], ROOT_DIR . $image);
             $data['image']=$image;
         }

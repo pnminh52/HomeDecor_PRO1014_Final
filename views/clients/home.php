@@ -126,9 +126,12 @@
         <h2>Bàn gỗ</h2>
         <div class="row g-4">
             <?php foreach ($tables as $table): ?>
+                
                 <div class="col-md-3">
     <div class="product-box">
-        <img src="<?= ROOT_URL .  $table['image']?>" alt="Product Image" class="product-img">
+   
+
+        <img src="<?= ROOT_URL . '/views/clients/productimages/' .  $table['image']?>" alt="Product Image" class="product-img">
         <div class="product-info">
             <a href="<?=ROOT_URL.'?ctl=details&id=' . $table['id']?>" class="product-name">
                 <h5><?= $table['name'] ?></h5>
