@@ -2,11 +2,9 @@
 
 <div class="container mt-5">
         <div class="row">
-            <!-- Hình ảnh sản phẩm -->
             <div class="col-md-6">
                 <img src="<?= $product['image']?>" alt="<?=$product['name']?>" class="img-fluid rounded">
             </div>
-            <!-- Thông tin sản phẩm -->
             <div class="col-md-6">
                 <h1 class="display-5"><?=$product['name']?></h1>
                 <p class="text-muted">Trạng thái:
@@ -23,15 +21,15 @@
                     <strong>Mô tả sản phẩm:</strong><br>
                     <?=$product['description']?>
                 </p>
-                <!-- Nút thêm vào giỏ hàng -->
+       
                 <div class="mt-4">
-                    <a class="btn btn-primary btn-lg">
+                    <a href="<?= ROOT_URL . '?ctl=add-cart&id=' . $product['id'] ?>" class="btn btn-primary btn-lg">
                         <i class="bi bi-cart-plus"></i> Thêm vào giỏ hàng
                     </a>
                 </div>
             </div>
         </div>
-        <!-- Thêm phần mô tả chi tiết nếu cần -->
+
         <div class="row mt-5">
             <div class="col">
                 <h2>Mô tả chi tiết</h2>
@@ -50,7 +48,7 @@
         <div class="product-box">
             <img src="<?= ROOT_URL .  $product['image']?>" alt="Product Image" class="product-img">
             <div class="product-info">
-                <a href="<?=ROOT_URL.'?ctl=detail&id=' . $product['id']?>">
+                <a href="<?=ROOT_URL.'?ctl=details&id=' . $product['id']?>">
                     <h5 class="product-name"><?= $product['name']?></h5>
                 </a>
                 <div>
@@ -58,7 +56,7 @@
                 </div>
                 <div class="product-buttons">
 
-                    <a class="btn btn-outline-success">Thêm vào giỏ hàng</a>
+                    <a href="<?= ROOT_URL . '?ctl=add-cart&id=' . $product['id'] ?>" class="btn btn-outline-success">Thêm vào giỏ hàng</a>
                 </div>
             </div>
         </div>

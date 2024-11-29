@@ -18,8 +18,20 @@
     $title = $product['name']; 
     $categories = (new Category)->all();
     $productReleads= (new Product)->listProductRelead($product['category_id'],$id); 
-    return view('clients.products.details', compact('product', 'title', 'categories','productReleads')); 
+
+    // lưu thông tin URI vào session
+    $_SESSION['URI'] = $_SERVER['REQUEST_URI'];
+
+    return view(
+        'clients.products.details', compact('product', 'title', 'categories','productReleads')); 
 }
-// Product relead function
+
+public function searchs() {
+  $query = $_GET['query'];
+  $products = (new Product)->search($query); 
+  $title = "Search results for: " . htmlspecialchars($query); 
+  $categories = (new Category)->all(); 
+  return view('clients.products.search', compact('products', 'title', 'categories')); // Trả về view
+}
 
  }

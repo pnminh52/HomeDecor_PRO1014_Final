@@ -16,7 +16,7 @@ class AdminCategoryController {
        
        $data = $_POST;
       (new Category)->create($data);
-      $_SESSION['message']="Thêm dữ liệu thành công!";
+      $_SESSION['message']="Thêm danh mục thành công!";
       header("location:". ADMIN_URL . "?ctl=listdm");
       
         
@@ -30,30 +30,22 @@ class AdminCategoryController {
     public function update(){
         $data=$_POST;
         (new Category)-> update($data['id'], $data);
-        $_SESSION['message']="Cập nhật dữ liệu thành công";
+        $_SESSION['message']="Cập nhật danh mục thành công";
         header("location:" . ADMIN_URL . '?ctl=editdm&id=' . $data['id']);
        
     }
-    // public function delete(){
-    //     $id=$_GET['id'];
-    //    $products = (new Product)-> listProductInCategory($id);
-    //    if($products){
-    //     $_SESSION['message']="Không thể xóa vì có sản phẩm của danh mục";
-    //     header("location:" . ADMIN_URL . "?ctl_listdm");
-    //     return;
-    //    }
-    //    (new Category)->delete($id);
-    //    $_SESSION['message']="Xóa dữ liệu thành công";
-    //    header("location:" . ADMIN_URL . "?ctl_listdm");
-    //    return;
-    // }
-    //!! chưa fix được trường hợp xóa danh mục có sản phẩm
-    public function delete()
-    {
-        $id = $_GET['id'];
-        (new Category)->delete($id);
-        $_SESSION['message'] = "Xóa dữ liệu thành công";
-        header("location: " . ADMIN_URL . "?ctl=listdm");
-        die;
+    public function delete(){
+        $id=$_GET['id'];
+       $products = (new Product)-> listProductCategory($id);
+       if($products){
+        $_SESSION['message']="Không thể xóa danh mục có sản phẩm";
+        header("location:" . ADMIN_URL . "?ctl_listdm");
+        return;
+       }
+       (new Category)->delete($id);
+       $_SESSION['message']="Xóa danh mục thành công";
+       header("location:" . ADMIN_URL . "?ctl_listdm");
+       return;
     }
+
 }
