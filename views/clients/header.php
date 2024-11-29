@@ -90,7 +90,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="/homedecorfinal/inspiration">Góc cảm hứng</a>
                         </li>
-
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?= ROOT_URL . '?ctl=view-cart' ?>">Giỏ hàng (<?= $_SESSION['totalQuantity']?? '' ?>)</a>
+                        </li>
 
 
 

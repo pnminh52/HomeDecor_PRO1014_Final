@@ -10,6 +10,7 @@ require_once __DIR__ ."/models/User.php";
 
 require_once __DIR__ ."/controllers/HomeCotroller.php";
 require_once __DIR__ ."/controllers/ProductController.php";
+require_once __DIR__ . "/controllers/CartController.php";
 
 $ctl=$_GET['ctl']??'';
 match ($ctl){
@@ -19,7 +20,6 @@ match ($ctl){
     'add-cart'=>(new CartController)->addToCart(),
     'search' => (new ProductController)->searchs(),
     'view-cart'=>(new CartController)->viewCart(),
-    'detail' => (new ProductController)->show(),
 
 
 };
