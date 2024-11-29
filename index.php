@@ -1,4 +1,5 @@
 <?php 
+session_start();
 require_once __DIR__ . "/env.php";
 require_once __DIR__ ."/common/function.php";
 
@@ -13,8 +14,10 @@ $ctl=$_GET['ctl']??'';
 match ($ctl){
     ''=>(new HomeCotroller)->index(),
     'category' => (new ProductController)->list(),
-    'detail' => (new ProductController)->show(),
+    'details' => (new ProductController)->show(),
     'add-cart'=>(new CartController)->addToCart(),
+    'search' => (new ProductController)->searchs(),
+
 
 
 };

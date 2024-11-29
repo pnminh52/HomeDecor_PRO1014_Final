@@ -29,7 +29,7 @@
         </div>
         <div class="mb-3">
             <label for="">Hình ảnh</label>
-            <img src="<?= ROOT_URL . $product['image']?>" width="90" alt="">
+            <img src="<?= ROOT_URL . "/productimages/" . $product['image']?>" width="90" alt="">
            <input type="hidden" name="image" value="<?=$product['image']?>" >
             <input type="file" name="image" id="" class="form-control">
 

@@ -16,8 +16,6 @@
             opacity: 1;
         }
 
-      
-
         .input-group .form-control {
             border-radius: 20px 0 0 20px;
         }
@@ -90,14 +88,15 @@
                             <a class="nav-link" href="/homedecorfinal/inspiration">Góc cảm hứng</a>
                         </li>
                     </ul>
-                    <form class="d-flex" role="search">
-                        <div class="input-group">
-                            <input class="form-control" type="search" placeholder="Tìm kiếm sản phẩm" aria-label="Search">
-                            <button class="input-group-text bg-white">
-                                <i class="bi bi-search"></i>
-                            </button>
-                        </div>
-                    </form>
+                    <form class="d-flex" action="/homedecorfinal/" method="GET">
+    <input type="hidden" name="ctl" value="search">
+    <div class="input-group">
+        <input class="form-control" type="search" name="query" placeholder="Tìm kiếm sản phẩm" aria-label="Search">
+        <button class="input-group-text bg-white">
+            <i class="bi bi-search"></i>
+        </button>
+    </div>
+</form>
                 </div>
             </div>
         </nav>

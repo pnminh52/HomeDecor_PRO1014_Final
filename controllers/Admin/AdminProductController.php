@@ -30,7 +30,7 @@ class AdminProductController
         if ($file['size'] > 0) {
             $image = $file['name'];
 
-            move_uploaded_file($file['tmp_name'], "../images/" . $image);
+            move_uploaded_file($file['tmp_name'], "/productimages/" . $image);
         }
 
         $data['image'] = $image;
@@ -55,20 +55,31 @@ class AdminProductController
 
     public function update()
     {
-        $data=$_POST;
-        dd($data);
-        $file=$_FILES['image'];
-        if($file['size']>0){
-            $image="images/".$file['name'];
-            move_uploaded_file($file['tmp_name'], ROOT_DIR . $image);
-            $data['image']=$image;
+        $data = $_POST;
+        //Tạo đối tượng Product
+        $product = new Product;
+        //lấy ra sản phẩm cũ
+        $item = $product->find($data['id']);
+        //Lưu ảnh cũ vào image khi người dùng không cập nhật ảnh
+        $image = $item['image'];
+
+        //Lấy file người dùng nhập vào
+        $file = $_FILES['image'];
+        if ($file['size'] > 0) {
+            $image = $file['name'];
+            //Upload image
+            move_uploaded_file($file['tmp_name'], ROOT_DIR . "productimages/" . $image);
         }
-        (new Product)->update($data['id'], $data);
-        $_SESSION['message']="Cập nhật thành công";
-        header("Location:" . ADMIN_URL . "?ctl=editsp&id=" . $data['id']);
+        //Thểm ảnh vào data
+        $data['image'] = $image;
+        //Cập nhật
+        $product->update($data['id'], $data);
+        //Quay về trang edit
+        $_SESSION['message']='Cập nhật dữ liệu thành công';
+        header("location: " . ADMIN_URL . "?ctl=listsp");
         die;
-       
     }
+    
 
 
     public function delete()
