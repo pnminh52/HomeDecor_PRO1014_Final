@@ -11,6 +11,7 @@ require_once __DIR__ ."/models/User.php";
 require_once __DIR__ ."/controllers/HomeCotroller.php";
 require_once __DIR__ ."/controllers/ProductController.php";
 require_once __DIR__ . "/controllers/CartController.php";
+require_once __DIR__ . "/controllers/AuthController.php";
 
 $ctl=$_GET['ctl']??'';
 match ($ctl){
@@ -20,6 +21,7 @@ match ($ctl){
     'add-cart'=>(new CartController)->addToCart(),
     'search' => (new ProductController)->searchs(),
     'view-cart'=>(new CartController)->viewCart(),
-
+    'register'=>(new AuthController)->register(),
+    'login'=>(new AuthController)->login(),
 
 };

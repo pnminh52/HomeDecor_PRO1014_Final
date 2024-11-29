@@ -93,6 +93,30 @@
                         <li class="nav-item">
                             <a class="nav-link" href="<?= ROOT_URL . '?ctl=view-cart' ?>">Giỏ hàng (<?= $_SESSION['totalQuantity']?? '' ?>)</a>
                         </li>
+                        <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="authDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Tài khoản
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="authDropdown">
+        <?php if (isset($_SESSION['user'])): ?>
+            <!-- Đã đăng nhập -->
+            <li>
+                <a class="dropdown-item" href="<?= ROOT_URL . '?ctl=profile' ?>">Hồ sơ</a>
+            </li>
+            <li>
+                <a class="dropdown-item" href="<?= ROOT_URL . '?ctl=logout' ?>">Đăng xuất</a>
+            </li>
+        <?php else: ?>
+            <!-- Chưa đăng nhập -->
+            <li>
+                <a class="dropdown-item" href="<?= ROOT_URL . '?ctl=login' ?>">Đăng nhập</a>
+            </li>
+            <li>
+                <a class="dropdown-item" href="<?= ROOT_URL . '?ctl=register' ?>">Đăng ký</a>
+            </li>
+        <?php endif; ?>
+    </ul>
+</li>
 
 
 
