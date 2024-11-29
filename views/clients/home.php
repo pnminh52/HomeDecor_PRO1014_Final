@@ -14,6 +14,11 @@
     .text-matcha {
         color:rgb(65, 49, 36); 
     }
+    .carousel-inner img {
+    height: 400px;
+    object-fit: cover; 
+    width: 100%; 
+}
 
     .carousel-caption {
         top: 8%; 
