@@ -20,7 +20,6 @@ match ($ctl){
     'search' => (new ProductController)->searchs(),
     'view-cart'=>(new CartController)->viewCart(),
     'detail' => (new ProductController)->show(),
-    'search'=> (new ProductController)->searchs(),
 
 
 };
