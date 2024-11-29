@@ -79,6 +79,9 @@
                             </ul>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link" href="/homedecorfinal/shop">Cửa hàng</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="/homedecorfinal/contact">Liên hệ</a>
                         </li>
                         <li class="nav-item">

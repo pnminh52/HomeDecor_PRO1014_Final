@@ -40,8 +40,8 @@
     .product-box {
     text-align: center;
     padding: 10px;
-    transition: border 0.3s ease; /* Chỉ có border sẽ chuyển động mượt mà */
-    border: 1px solid transparent; /* Border mặc định là transparent */
+    transition: border 0.3s ease; 
+    border: 1px solid transparent;
     background-color: #fff; 
     height: 100%; 
     display: flex;
@@ -74,9 +74,10 @@
 h2 {
         font-size: 1.5rem !important; 
         font-weight: bold !important;
-        text-align: center !important;
-        margin-top: 30px !important;
+        margin-top: 20px !important;
         margin-bottom: 30px !important;
+        border-bottom: 1px solid #ddd;
+        height: 40px !important;
     }
 
 
