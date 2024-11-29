@@ -19,10 +19,38 @@ class CartController {
                 ];
             }
         $_SESSION['cart'] = $carts;
-      dd($carts);
-      die;
+     
         $url = $_SESSION['URI'];
 
         return header("Location: " .$url);
+
+        
+    }
+
+    public function totalSumQuantity()
+    {
+        $carts = $_SESSION['cart'] ?? [];
+        $total = 0;
+        foreach ($carts as $cart){
+            $total += $cart['quantity'];
+        }
+        return $total;
+    }
+
+    public function viewCart(){
+        $carts = $_SESSION['cart'] ?? [];
+        $sumPrice =(new CartController)->sumPrice();
+        $categories = (new Category)->all();
+
+        return view("clients.carts.cart", compact('carts', 'categories', 'sumPrice'));
+    }
+
+    public function sumPrice(){
+        $carts = $_SESSION['cart'] ?? [];
+        $total = 0;
+        foreach ($carts as $cart){
+            $total += $cart['quantity'] *$cart['price'];
+        }
+        return $total;
     }
 }

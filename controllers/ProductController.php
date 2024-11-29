@@ -22,6 +22,8 @@
     // lưu thông tin URI vào session
     $_SESSION['URI'] = $_SERVER['REQUEST_URI'];
 
+    $_SESSION['totalQuantity'] =(new CartController)->totalSumQuantity();
+
     return view(
         'clients.products.details', compact('product', 'title', 'categories','productReleads')); 
 }

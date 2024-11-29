@@ -17,6 +17,7 @@ match ($ctl){
     'details' => (new ProductController)->show(),
     'add-cart'=>(new CartController)->addToCart(),
     'search' => (new ProductController)->searchs(),
+    'view-cart'=>(new CartController)->viewCart(),
 
 
 
