@@ -20,3 +20,10 @@ function dd ($data)
      echo "</pre>";
 }
 
+// hàm session_flash , sẽ hủy session ngay lập tức
+function session_flash($key){
+    $message  = $_SESSION[$key] ?? '';
+    unset($_SESSION[$key]);
+    return $message;
+}
+

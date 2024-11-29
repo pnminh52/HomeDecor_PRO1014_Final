@@ -25,6 +25,31 @@
                             <a class="nav-link" href="">Giới thiệu</a>
                         </li>
                         <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Đăng ký
+                                <i class="fa-solid fa-user"></i>
+                                <?= $_SESSION['user']['fullname'] ?? '' ?>
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <?php if(isset($_SESSION['user']) ) :?>
+                                <li>
+                                    <a class="dropdown-item" href="<?= ROOT_URL?>">profile</a>
+                                </li>
+                                <li>
+                                <a class="dropdown-item" href="<?= ROOT_URL . '?ctl=logout'?>">logout</a>
+                                </li>
+                                <?php else :?>
+                                    <li>
+                                    <a href="<?= ROOT_URL . '?ctl=login'?>">login</a>
+                                </li>
+                                <li>
+                                <a href="<?= ROOT_URL . '?ctl=register'?>">register</a>
+                                </li>
+                                <?php endif?>
+       
+                            </ul>
+                        </li>
+<li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Sản phẩm
                         </a>
