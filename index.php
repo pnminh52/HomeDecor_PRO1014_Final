@@ -23,5 +23,5 @@ match ($ctl){
     'view-cart'=>(new CartController)->viewCart(),
     'register'=>(new AuthController)->register(),
     'login'=>(new AuthController)->login(),
-
+    'logout'=>(new AuthController)->logout(),
 };

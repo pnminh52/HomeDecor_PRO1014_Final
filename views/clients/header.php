@@ -94,7 +94,7 @@
                             <a class="nav-link" href="<?= ROOT_URL . '?ctl=view-cart' ?>">Giỏ hàng (<?= $_SESSION['totalQuantity']?? '' ?>)</a>
                         </li>
                         <li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle" href="#" id="authDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <a class="nav-link dropdown-toggle" href="#" id="authDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" <?=$_SESSION['user']['fullname']??''?>>
         Tài khoản
     </a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="authDropdown">
