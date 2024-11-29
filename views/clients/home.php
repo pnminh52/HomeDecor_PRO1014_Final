@@ -26,6 +26,69 @@
     .carousel-caption p {
         font-size: 1rem; 
     }
+
+      .product-box {
+    text-align: center;
+    padding: 10px;
+    transition: border 0.3s ease; 
+    border: 1px solid transparent;
+    background-color: #fff; 
+    height: 100%; 
+    display: flex;
+    flex-direction: column; 
+    justify-content: space-between; 
+}
+
+.product-box:hover {
+    border: 1px solid #ddd; /* Khi hover, border sẽ hiển thị */
+}
+
+
+.product-info {
+    margin-top: 10px; 
+}
+
+.product-img {
+    width: 100%;
+    height: auto;
+    max-height: 150px; 
+    object-fit: cover; 
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.product-buttons {
+    margin-top: 10px; 
+}
+
+h2 {
+        font-size: 1.5rem !important; 
+        font-weight: bold !important;
+        margin-top: 20px !important;
+        margin-bottom: 30px !important;
+        border-bottom: 1px solid #ddd;
+        height: 40px !important;
+    }
+
+
+.product-name {
+    font-size: 1rem;
+    font-weight: lighter; 
+    margin: 10px 0;
+    color: black;
+    text-decoration: none;
+    font-family: Arial, sans-serif; 
+}
+
+
+
+.product-price {
+    color: black;
+    font-size: 1rem;
+    font-weight: lighter;
+}
+
+
 </style>
 
 
