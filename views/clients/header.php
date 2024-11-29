@@ -90,9 +90,6 @@
                         <li class="nav-item">
                             <a class="nav-link" href="/homedecorfinal/inspiration">Góc cảm hứng</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="<?= ROOT_URL . '?ctl=view-cart' ?>">Giỏ hàng (<?= $_SESSION['totalQuantity']?? '' ?>)</a>
-                        </li>
                     </ul>
                     <form class="d-flex" action="/homedecorfinal/" method="GET">
     <input type="hidden" name="ctl" value="search">
