@@ -1,4 +1,4 @@
-<?php include_once ROOT_DIR . "views/clients/header.php"?>
+<?php include_once ROOT_DIR . "views/clients/header.php" ?>
 <style>
 
 .product-box {
@@ -77,43 +77,37 @@ form select:focus {
 }
 </style>
 <div class="container mt-5">
-<h2><?= $category_name?></h2>
-<form method="GET" action="">
-    <input type="hidden" name="ctl" value="category">
-    <input type="hidden" name="id" value="<?= htmlspecialchars($id) ?>">
-    <select name="sort" onchange="this.form.submit()">
-        <option value="asc" <?= $sort === 'asc' ? 'selected' : '' ?>>Giá: Thấp đến cao</option>
-        <option value="desc" <?= $sort === 'desc' ? 'selected' : '' ?>>Giá: Cao đến tthấp</option>
+    <h2><?= $title ?></h2>
+    <form method="GET" action="">
+    <input type="hidden" name="ctl" value="shop">
+    <select name="order" onchange="this.form.submit()">
+        <option value="ASC" <?= $order === 'ASC' ? 'selected' : '' ?>>Giá: Thấp đến cao</option>
+        <option value="DESC" <?= $order === 'DESC' ? 'selected' : '' ?>>Giá: Cao đến thấp</option>
     </select>
 </form>
     <div class="row g-4">
-        
-        <?php if ($products):?>
         <?php foreach ($products as $product): ?>
             <div class="col-md-3">
-        <div class="product-box">
-    
+    <div class="product-box">
+   
 
-            <img src="<?= ROOT_URL . '/productimages/' .  $product['image']?>" alt="Product Image" class="product-img">
-            <div class="product-info">
-                <a href="<?=ROOT_URL.'?ctl=details&id=' . $product['id']?>" class="product-name">
-                    <h5><?= $product['name'] ?></h5>
-                </a>
-                <div>
-                    <span class="product-price"><?= number_format($product['price'])?>đ</span>
-                </div>
+        <img src="<?= ROOT_URL . '/productimages/' .  $product['image']?>" alt="Product Image" class="product-img">
+        <div class="product-info">
+            <a href="<?=ROOT_URL.'?ctl=details&id=' . $product['id']?>" class="product-name">
+                <h5><?= $product['name'] ?></h5>
+            </a>
+            <div>
+                <span class="product-price"><?= number_format($product['price'])?>đ</span>
             </div>
-            <div class="product-buttons d-flex">
-        <a class="btn btn-outline-dark " href="<?= ROOT_URL.'?ctl=details&id=' . $product['id'] ?>"  style="border-radius: 0;">Xem thêm</a>
-    </div>
-
-
         </div>
-    </div>
-        <?php endforeach?>
-        <?php else  :?>
-            <div>Danh mục <strong><?=$category_name?></strong> chưa có sản phẩm!</div>
-            <?php endif?>
+        <div class="product-buttons d-flex">
+    <a class="btn btn-outline-dark " href="<?= ROOT_URL.'?ctl=details&id=' . $product['id'] ?>"  style="border-radius: 0;">Xem thêm</a>
+</div>
+
+
     </div>
 </div>
-<?php include_once ROOT_DIR . "views/clients/footer.php"?>
+        <?php endforeach; ?>
+    </div>
+</div>
+<?php include_once ROOT_DIR . "views/clients/footer.php" ?>
