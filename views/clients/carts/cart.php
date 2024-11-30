@@ -1,4 +1,5 @@
 <?php include_once ROOT_DIR ."views/clients/header.php" ?>
+
 <style>
 .cart-header {
         display: flex;
@@ -112,9 +113,67 @@
     opacity: 1; 
 }
 
-</style>
+.quantity-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: max-content;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.quantity-container button {
+    width: 40px;
+    height: 40px;
+    border: none;
+    background-color: #f8f9fa;
+    color: #333;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+.quantity-container input.quantity-input {
+    width: 60px;
+    height: 40px;
+    text-align: center;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    font-weight: bold;
+    box-shadow: none;
+    -moz-appearance: textfield; 
+    -webkit-appearance: none; 
+    appearance: none;
+     
+}
+
+.quantity-container input.quantity-input::-webkit-inner-spin-button, 
+.quantity-container input.quantity-input::-webkit-outer-spin-button {
+    -webkit-appearance: none; 
+    margin: 0; }
 
 </style>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        document.querySelectorAll(".increment").forEach(btn => {
+            btn.addEventListener("click", function () {
+                const input = this.closest("td").querySelector(".quantity-input");
+                input.value = parseInt(input.value) + 1;
+            });
+        });
+        document.querySelectorAll(".decrement").forEach(btn => {
+            btn.addEventListener("click", function () {
+                const input = this.closest("td").querySelector(".quantity-input");
+                const currentValue = parseInt(input.value);
+                if (currentValue > 1) {
+                    input.value = currentValue - 1;
+                }
+            });
+        });
+    });
+</script>
+
 <div class="container mt-5">
 <div class="cart-header d-flex justify-content-between align-items-center">
     <h2>Giỏ hàng của bạn</h2>
@@ -151,9 +210,14 @@
                         <td><?= $cart['name'] ?></td>
                         <td><?= number_format($cart['price']) ?>VNĐ</td>
                         <td>
-                                <input type="number" name="quantity[<?= $id ?>]" class="form-control" value="<?= $cart['quantity'] ?>" min="1"
-                                    style="width: 80px;">
-                            </td>
+                            <div class="quantity-container">
+                                <button type="button" class="decrement" data-id="<?= $id ?>">-</button>
+                                <input type="number" name="quantity[<?= $id ?>]" class="quantity-input" value="<?= $cart['quantity'] ?>" min="1">
+                                <button type="button" class="increment" data-id="<?= $id ?>">+</button>
+                            </div>
+                        </td>
+
+
                         <td><?= number_format($cart['price'] * $cart['quantity']) ?>VNĐ</td>
                         <td>
                         <a href="<?= ROOT_URL . '?ctl=delete-cart&id=' . $id?>" type="button" class="btn btn-danger btn-sm">
