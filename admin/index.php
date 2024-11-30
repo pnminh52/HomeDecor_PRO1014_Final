@@ -5,10 +5,11 @@ require_once __DIR__ ."/../common/function.php";
 require_once __DIR__ ."/../models/BaseModel.php";
 require_once __DIR__ ."/../models/Category.php";
 require_once __DIR__ ."/../models/Product.php";
+require_once __DIR__ ."/../models/User.php";
 require_once __DIR__ ."/../controllers/Admin/DashboardController.php";
 require_once __DIR__ ."/../controllers/Admin/AdminCategoryController.php";
 require_once __DIR__ ."/../controllers/Admin/AdminProductController.php";
-
+require_once __DIR__ ."/../controllers/AuthController.php";
 
 $ctl = $_GET['ctl'] ?? '';
 match ($ctl){
@@ -27,5 +28,8 @@ match ($ctl){
     'editsp'=> (new AdminProductController)->edit(),
     'updatesp'=> (new AdminProductController)->update(),
     'deletesp'=> (new AdminProductController)->delete(),
+    //!!User
+    'listuser' => (new AuthController)->index(),
+    'updateuser' => (new AuthController)->updateActive(),
 };
 

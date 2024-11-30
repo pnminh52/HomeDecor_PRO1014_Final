@@ -43,5 +43,10 @@ class User extends BaseModel {
         $stmt->execute($data);
     }
 
-    // 
+    // cập nhập hoạt động của user (active)
+    public function updateActive($id, $active) {
+        $sql = "UPDATE user SET active=:active WHERE id=:id";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute(['id' => $id, 'active' => $active]);
+    }
 }
