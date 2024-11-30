@@ -30,6 +30,7 @@ class Product extends BaseModel{
         $stmt->execute(['id' => $id]);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+    //!!Đây là hàm danh sách các sản phẩm có liên quan
     public function listProductRelead($category_id,$id){
         $sql="SELECT p.*, cate_name FROM products p JOIN categories c ON p.category_id = c.id WHERE c.id=:category_id AND p.id <> :id ORDER BY id DESC LIMIT 4";
         $stmt = $this->conn->prepare($sql);

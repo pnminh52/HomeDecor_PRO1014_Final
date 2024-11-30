@@ -8,13 +8,6 @@ class Category extends BaseModel {
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
-    //Create
-    // public function create($data)
-    // {
-    //     $sql = "INSERT INTO categories(cate_name, type) VALUES(:cate_name, :type)";
-    //     $stmt = $this->conn->prepare($sql);
-    //     $stmt->execute($data);
-    // }
     public function create($data){
         // Kiểm tra nếu dữ liệu có chứa 'cate_name'
         if (isset($data['cate_name'])) {

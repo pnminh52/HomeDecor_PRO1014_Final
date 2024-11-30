@@ -2,7 +2,7 @@
  class ProductController{
   public function list() {
     $id = $_GET['id'] ?? null;
-    $sort = $_GET['sort'] ?? 'asc'; // Nếu không có giá trị sort thì mặc định là 'asc'
+    $sort = $_GET['sort'] ?? 'asc'; //!!Nếu không có giá trị sort thì mặc định là 'asc'
     
     if (!$id || !filter_var($id, FILTER_VALIDATE_INT)) {
         header("Location: " . ROOT_URL);
