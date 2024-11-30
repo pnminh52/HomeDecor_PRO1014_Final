@@ -68,5 +68,13 @@ class CartController {
         // Điều hướng lại trang giỏ hàng
         return header("Location: " . ROOT_URL . "?ctl=view-cart");
     }
+    public function updateCart(){
+        $quantities = $_POST['quantity'];
+        foreach ($quantities as $id => $qty){
+            $_SESSION['cart']['id']['quantity']=$qty;
+        }
+        return header("Location: " . ROOT_URL . "?ctl=view-cart");
+
+    }
     
 }

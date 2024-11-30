@@ -2,7 +2,7 @@
 
 <div class="container mt-5">
     <h1 class="mb-4">Giỏ hàng của bạn</h1>
-    <form action="update-cart.php" method="POST">
+    <form action="<?ROOT_URL . '?ctl=update-cart'?>" method="POST">
         <div class="table-responsive">
             <table class="table table-bordered table-striped align-middle">
                 <thead class="table-primary">
