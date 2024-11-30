@@ -78,8 +78,9 @@
 
     .category-header h2 {
         font-size: 1.5rem !important;
-        font-weight: bold !important;
+        font-weight: thin !important;
         margin: 0; 
+        font-family: Arial, sans-serif;
     }
 
     .category-header a {

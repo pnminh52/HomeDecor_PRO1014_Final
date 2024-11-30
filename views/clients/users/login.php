@@ -33,6 +33,8 @@
             
 
             <button type="submit" class="btn btn-primary w-100">Đăng nhập</button>
+          <p>Bạn chưa có tài khoản? <a href="http://localhost/homedecorfinal/?ctl=register">Đăng ký</a> tại đây!
+          </p>
           </form>
         </div>
       </div>

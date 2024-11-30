@@ -70,6 +70,8 @@ class CartController {
         foreach ($quantities as $id => $qty){
             $_SESSION['cart'][$id]['quantity']=$qty;
         }
+        //!!Tăng giảm quantity sẽ thay đổi số sp trong giỏ hàng. 
+        $_SESSION['totalQuantity'] = (new CartController)->totalSumQuantity();
         return header("Location: " . ROOT_URL . "?ctl=view-cart");
 
     }
