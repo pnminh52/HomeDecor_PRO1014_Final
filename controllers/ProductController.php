@@ -10,13 +10,8 @@
     }
     $products = (new Product)->listProductCategory($id, $sort);
     $category_name = (new Category)->find($id)['cate_name'];
-
     $categories = (new Category)->all();
-
-    // Tiêu đề trang
     $title = $category_name;
-
-    // Trả về view với dữ liệu
     return view(
         'clients.products.list',
         compact('products', 'categories', 'category_name', 'title', 'id', 'sort')

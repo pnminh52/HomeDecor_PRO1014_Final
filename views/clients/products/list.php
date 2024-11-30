@@ -36,11 +36,12 @@
 
 h2 {
     font-size: 1.5rem !important; 
-    font-weight: bold !important;
+    font-weight: lighter !important;
     margin-top: 20px !important;
     margin-bottom: 30px !important;
     border-bottom: 1px solid #ddd;
     height: 40px !important;
+    font-family: 'Arial', sans-serif !important; 
 }
 
 .product-name {

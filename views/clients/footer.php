@@ -15,11 +15,10 @@
 
 
 <style>
-  /* Loại bỏ khoảng trắng dưới footer */
   footer {
     margin-bottom: 0 !important;
     padding-bottom: 0 !important;
-    margin-top: 30px !important;
+    margin-top: 100px !important;
     max-width: 100%;
   }
 </style>
