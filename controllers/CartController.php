@@ -50,6 +50,9 @@ class CartController {
         $total = 0;
         foreach ($carts as $cart){
             $total += $cart['quantity'] *$cart['price'];
+            echo '<pre>';
+print_r($_SESSION['cart']);
+echo '</pre>';
         }
         return $total;
     }
