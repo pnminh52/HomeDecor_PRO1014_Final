@@ -48,7 +48,9 @@ class CartController {
         $carts = $_SESSION['cart'] ?? [];
         $total = 0;
         foreach ($carts as $cart){
+            if (isset($cart['price']) && isset($cart['quantity'])) {
             $total += $cart['quantity'] *$cart['price'];
+            }
         }
         return $total;
     }
