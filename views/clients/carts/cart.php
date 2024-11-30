@@ -101,6 +101,17 @@
         padding: 15px;
         text-align: right;
     }
+    .btn-danger,
+.btn-warning {
+    opacity: 0.7;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.btn-danger:hover, 
+.btn-warning:hover {
+    opacity: 1; 
+}
+
 </style>
 
 </style>

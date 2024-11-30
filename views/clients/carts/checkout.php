@@ -80,9 +80,9 @@
                             <li class="list-group-item d-flex justify-content-between align-items-center">
                                 <div>
                                     <h6 class="mb-0"><?=$cart['name']?></h6>
-                                    <small class="text-muted"><?=$cart['quantity']?></small>
+                                    <small class="text-muted">Số lượng: <?=$cart['quantity']?></small>
                                 </div>
-                                <span><?=number_format($cart['price']*$cart['quantity'])?></span>
+                                <span> <?=number_format($cart['price']*$cart['quantity'])?></span>
                             </li>
                            <?php endforeach?>
                         </ul>
