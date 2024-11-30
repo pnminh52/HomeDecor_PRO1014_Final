@@ -21,18 +21,19 @@
                     <tr>
                         <th scope="row"><?= $id ?></th>
                         <td>
-                            <img src="<?= $cart['image'] ?>" alt="" class="img-thumbnail" style="width: 80px; height: auto" />
+                            <img src="<?= ROOT_URL."/productimages/". $cart['image'] ?>" alt="" class="img-thumbnail" style="width: 80px; height: auto" />
                         </td>
                         <td><?= $cart['name'] ?></td>
-                        <td><?= $cart['price'] ?>VNĐ</td>
+                        <td><?= number_format($cart['price']) ?>VNĐ</td>
                         <td>
-                            <input title="title" type="number" name="quantity[<?= $stt ?>]" class="form-control" value="<?= $cart['quantity']?>" min="1" style="width: 80px" />
-                        </td>
+                                <input type="number" name="quantity[<?= $id ?>]" class="form-control" value="<?= $cart['quantity'] ?>" min="1"
+                                    style="width: 80px;">
+                            </td>
                         <td><?= number_format($cart['price'] * $cart['quantity']) ?>VNĐ</td>
                         <td>
-                            <button type="button" class="btn btn-danger btn-sm">
+                        <a href="<?= ROOT_URL . '?ctl=delete-cart&id=' . $id?>" type="button" class="btn btn-danger btn-sm">
                                 <i class="bi bi-trash"></i> Xóa
-                            </button>
+                            </a>
                         </td>
                     </tr>
                     <?php endforeach ?>

@@ -24,4 +24,5 @@ match ($ctl){
     'register'=>(new AuthController)->register(),
     'login'=>(new AuthController)->login(),
     'logout'=>(new AuthController)->logout(),
+    'delete-cart'=>(new CartController)->deleteProductInCart(),
 };

@@ -53,4 +53,20 @@ class CartController {
         }
         return $total;
     }
+    //delete product in cart
+    public function deleteProductInCart(){
+        $id = $_GET['id'];  // Lấy id từ query string
+    
+        if (isset($_SESSION['cart'][$id])) {
+            // Xóa sản phẩm khỏi giỏ hàng
+            unset($_SESSION['cart'][$id]);
+        }
+        
+        // Cập nhật lại tổng số lượng sản phẩm trong giỏ hàng
+        $_SESSION['totalQuantity'] = (new CartController)->totalSumQuantity();
+    
+        // Điều hướng lại trang giỏ hàng
+        return header("Location: " . ROOT_URL . "?ctl=view-cart");
+    }
+    
 }
