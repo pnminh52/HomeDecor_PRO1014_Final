@@ -74,10 +74,11 @@ echo '</pre>';
     public function updateCart(){
         $quantities = $_POST['quantity'];
         foreach ($quantities as $id => $qty){
-            $_SESSION['cart']['id']['quantity']=$qty;
+            $_SESSION['cart'][$id]['quantity']=$qty;
         }
         return header("Location: " . ROOT_URL . "?ctl=view-cart");
 
     }
+    
     
 }
