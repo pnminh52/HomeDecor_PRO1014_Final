@@ -45,7 +45,7 @@
 }
 
 .product-box:hover {
-    border: 1px solid #ddd; /* Khi hover, border sẽ hiển thị */
+    border: 1px solid #ddd; 
 }
 
 
@@ -66,13 +66,31 @@
     margin-top: 10px; 
 }
 
-h2 {
-        font-size: 1.5rem !important; 
-        font-weight: bold !important;
-        margin-top: 20px !important;
-        margin-bottom: 30px !important;
+.category-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
         border-bottom: 1px solid #ddd;
-        height: 40px !important;
+        padding-bottom: 10px;
+    }
+
+    .category-header h2 {
+        font-size: 1.5rem !important;
+        font-weight: bold !important;
+        margin: 0; 
+    }
+
+    .category-header a {
+        font-size: 1rem;
+        color:rgb(100, 100, 100);
+        text-decoration: none;
+        font-weight: lighter;
+
+    }
+
+    .category-header a:hover {
+        text-decoration: none;
+        color:black;
     }
 
 
@@ -126,7 +144,11 @@ h2 {
     <div class="container mt-5">
       
 
-        <h2>Bàn gỗ</h2>
+    <div class="category-header d-flex justify-content-between align-items-center">
+    <h2>Bàn gỗ</h2>
+    <a href="#">Xem tất cả</a>
+</div>
+
         <div class="row g-4">
             <?php foreach ($tables as $table): ?>
                 
@@ -154,7 +176,10 @@ h2 {
 
             <?php endforeach?>
         </div>
-        <h2>Tủ ly</h2>
+        <div class="category-header d-flex justify-content-between align-items-center">
+    <h2>Tủ ly</h2>
+    <a href="#">Xem tất cả</a>
+</div>
         <div class="row g-4">
             <?php foreach ($cupboards as $cupboard): ?>
                 <div class="col-md-3">

@@ -57,7 +57,7 @@
         </div>
         <!-- Nút hành động -->
         <div class="d-flex justify-content-between mt-4">
-            <a href="shop.html" class="btn btn-secondary">
+            <a href="<?= ROOT_URL?>" class="btn btn-secondary">
                 <i class="bi bi-arrow-left"></i> Tiếp tục mua sắm
             </a>
             <div>
