@@ -72,6 +72,8 @@
         align-items: center;
         border-bottom: 1px solid #ddd;
         padding-bottom: 10px;
+        margin-bottom: 30px;
+        margin-top:20px
     }
 
     .category-header h2 {
@@ -146,7 +148,7 @@
 
     <div class="category-header d-flex justify-content-between align-items-center">
     <h2>Bàn gỗ</h2>
-    <a href="#">Xem tất cả</a>
+    <a href="http://localhost/homedecorfinal/?ctl=category&id=2">Xem tất cả</a>
 </div>
 
         <div class="row g-4">
@@ -178,7 +180,7 @@
         </div>
         <div class="category-header d-flex justify-content-between align-items-center">
     <h2>Tủ ly</h2>
-    <a href="#">Xem tất cả</a>
+    <a href="http://localhost/homedecorfinal/?ctl=category&id=4">Xem tất cả</a>
 </div>
         <div class="row g-4">
             <?php foreach ($cupboards as $cupboard): ?>
