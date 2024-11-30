@@ -4,6 +4,14 @@
     <h1 class="mb-4">Giỏ hàng của bạn</h1>
     <form action="<?php echo ROOT_URL . '?ctl=update-cart'; ?>" method="POST">
     <div class="table-responsive">
+    <?php if (isset($_SESSION['message'])): ?>
+    <div class="alert alert-<?= $_SESSION['message']['type'] ?> alert-dismissible fade show" role="alert">
+        <?= $_SESSION['message']['content'] ?>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    <?php unset($_SESSION['message']);?>
+<?php endif; ?>
+
             <table class="table table-bordered table-striped align-middle">
                 <thead class="table-primary">
                     <tr>

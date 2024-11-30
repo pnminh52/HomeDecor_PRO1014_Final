@@ -74,15 +74,20 @@ class CartController {
 
     }
     public function viewCheckout(){
-        //!!Kiem tra xem user da login chua
-        if(isset($_SESSION['user'])){
-            return header ("Location: " . ROOT_URL . "?ctl=login");
+        if (!isset($_SESSION['user'])) {
+            $_SESSION['message'] = [
+                'type' => 'danger',
+                'content' => 'Bạn cần đăng nhập để thanh toán!'
+            ];
+            return header("Location: " . ROOT_URL . "?ctl=view-cart");
         }
         $user = $_SESSION['user'];
         $carts = $_SESSION['cart'] ?? [];
-        $sumPrice =(new CartController)->sumPrice();
-         return view("clients.carts.checkout", compact('user', 'carts','sumPrice'));
+        $sumPrice = (new CartController)->sumPrice();
+        return view("clients.carts.checkout", compact('user', 'carts', 'sumPrice'));
     }
+    
+    
     
     
 }
