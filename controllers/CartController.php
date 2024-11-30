@@ -38,6 +38,8 @@ class CartController {
 
     public function viewCart(){
         $carts = $_SESSION['cart'] ?? [];
+        // dd($carts);
+        // die;
         $sumPrice =(new CartController)->sumPrice();
         $categories = (new Category)->all();
 
