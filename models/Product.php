@@ -9,8 +9,16 @@ class Product extends BaseModel{
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
     //Get categories information
-    public function listProductCategory($id){
-        $sql="SELECT p.*, cate_name FROM products p JOIN categories c ON p.category_id = c.id WHERE c.id=:id";
+    public function listProductCategory($id, $sort = '') {
+        $orderBy = '';
+        if ($sort === 'asc') {
+            $orderBy = 'ORDER BY price ASC';
+        } elseif ($sort === 'desc') {
+            $orderBy = 'ORDER BY price DESC';
+        }
+        $sql = "SELECT p.*, cate_name FROM products p
+                JOIN categories c ON p.category_id = c.id
+                WHERE c.id = :id $orderBy";
         $stmt = $this->conn->prepare($sql);
         $stmt->execute(['id' => $id]);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);

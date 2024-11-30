@@ -1,16 +1,23 @@
 <?php
  class ProductController{
-  public function list(){
-    $id = $_GET["id"];
-    $products = (new Product)->listProductCategory($id);
-    $category_name= (new Category)-> find($id)['cate_name'];
-    $categories=(new Category)-> all();
-    $tittle = $category_name;
-    return view (
+  public function list() {
+    $id = $_GET['id'] ?? null;
+    $sort = $_GET['sort'] ?? '';
+    if (!$id || !filter_var($id, FILTER_VALIDATE_INT)) {
+        header("Location: " . ROOT_URL);
+        exit;
+    }
+    $products = (new Product)->listProductCategory($id, $sort);
+    $category_name = (new Category)->find($id)['cate_name'];
+    $categories = (new Category)->all();
+    $title = $category_name;
+    return view(
         'clients.products.list',
-        compact('products','categories', 'category_name', 'tittle')
+        compact('products', 'categories', 'category_name', 'title', 'id', 'sort')
     );
-  }
+}
+
+
    //Product details function
    public function show(){
     $id = $_GET['id']; 
@@ -31,7 +38,7 @@
 public function searchs() {
   $query = $_GET['query'];
   $products = (new Product)->search($query); 
-  $title = "Search results for: " . htmlspecialchars($query); 
+  $title = "Kết quả tìm kiếm cho sản phẩm: " . htmlspecialchars($query); 
   $categories = (new Category)->all(); 
   return view('clients.products.search', compact('products', 'title', 'categories')); // Trả về view
 }

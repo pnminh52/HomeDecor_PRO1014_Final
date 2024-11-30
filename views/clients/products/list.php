@@ -64,7 +64,20 @@ h2 {
 </style>
 <div class="container mt-5">
 <h2><?= $category_name?></h2>
+<form method="GET" action="">
+    <p>Sắp xếp theo giá:</p>
+    <input type="hidden" name="ctl" value="category">
+    <input type="hidden" name="id" value="<?= htmlspecialchars($id) ?>">
+    <select name="sort" onchange="this.form.submit()">
+        <option value="asc" <?= $sort === 'asc' ? 'selected' : '' ?>>Giá: Thấp đến Cao</option>
+        <option value="desc" <?= $sort === 'desc' ? 'selected' : '' ?>>Giá: Cao đến Thấp</option>
+    </select>
+</form>
+
+
+
 <div class="row g-4">
+    
     <?php if ($products):?>
     <?php foreach ($products as $product): ?>
         <div class="col-md-3">
