@@ -58,17 +58,11 @@ class CartController {
     }
     //delete product in cart
     public function deleteProductInCart(){
-        $id = $_GET['id'];  // Lấy id từ query string
-    
+        $id = $_GET['id'];
         if (isset($_SESSION['cart'][$id])) {
-            // Xóa sản phẩm khỏi giỏ hàng
             unset($_SESSION['cart'][$id]);
         }
-        
-        // Cập nhật lại tổng số lượng sản phẩm trong giỏ hàng
         $_SESSION['totalQuantity'] = (new CartController)->totalSumQuantity();
-    
-        // Điều hướng lại trang giỏ hàng
         return header("Location: " . ROOT_URL . "?ctl=view-cart");
     }
     public function updateCart(){
@@ -78,6 +72,16 @@ class CartController {
         }
         return header("Location: " . ROOT_URL . "?ctl=view-cart");
 
+    }
+    public function viewCheckout(){
+        //!!Kiem tra xem user da login chua
+        if(isset($_SESSION['user'])){
+            return header ("Location: " . ROOT_URL . "?ctl=login");
+        }
+        $user = $_SESSION['user'];
+        $carts = $_SESSION['cart'] ?? [];
+        $sumPrice =(new CartController)->sumPrice();
+         return view("clients.carts.checkout", compact('user', 'carts','sumPrice'));
     }
     
     
