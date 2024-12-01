@@ -23,10 +23,13 @@
       <td><?= $order['payment_method']?></td>
       <td><?= translate_status($order['status'])?></td>
       <td><?= number_format($order['total_price'])?>VNĐ</td>
-      <td><?= $order['created_at']?></td>
-      <td><?= $order['id']?></td>
+      <!-- <td><= $order['created_at']?></td> -->
+      <!-- <td><= $order['id'] ?></td> -->
+       <!-- tôi comment lại do lỗi -->
+        <td>  <?=date('d-m-Y H:i:s' , strtotime($oder['created_at']))?></td>
+
       <td>
-        <a href="#" class="btn btn-primary">Cập nhật</a>
+        <a href="<?ADMIN_URL . '?ctl=detail-order'?>" class="btn btn-primary">Cập nhật</a>
       </td>
     </tr>
     <?php endforeach?>

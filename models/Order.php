@@ -2,7 +2,7 @@
 
 class Order extends BaseModel
 {
-    //tất cả hóa đơna
+    //tất cả hóa đơn    
     public function all()
     {
         $sql = "SELECT o.*, fullname, email, address, phone FROM orders o JOIN users u ON o.user_id=u.id ORDER BY o.id DESC";
