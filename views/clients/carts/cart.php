@@ -248,7 +248,7 @@
                 <button type="submit" class="btn btn-update">
                     <i class="bi bi-arrow-clockwise"></i> Cập nhật giỏ hàng
                 </button>
-                <a class="btn btn-checkout" href="<?= ROOT_URL . '?ctl=checkout' ?>">Thanh toán</a>
+                <a class="btn btn-checkout" href="<?= ROOT_URL . '?ctl=view-checkout' ?>">Thanh toán</a>
                 </div>
         </div>
     </form>

@@ -10,6 +10,7 @@ require_once __DIR__ ."/controllers/HomeCotroller.php";
 require_once __DIR__ ."/controllers/ProductController.php";
 require_once __DIR__ . "/controllers/CartController.php";
 require_once __DIR__ . "/controllers/AuthController.php";
+require_once __DIR__ ."/models/Order.php";
 
 $ctl=$_GET['ctl']??'';
 match ($ctl){
@@ -24,10 +25,12 @@ match ($ctl){
     'view-cart'=>(new CartController)->viewCart(),
     'delete-cart'=>(new CartController)->deleteProductInCart(),
     'update-cart'=>(new CartController)->updateCart(),
-    'checkout'=>(new CartController)->viewCheckout(),
+    'view-checkout'=>(new CartController)->viewCheckout(),
+    'checkout'=>(new CartController)->checkOut(),
     //!!Auth
     'register'=>(new AuthController)->register(),
     'login'=>(new AuthController)->login(),
     'logout'=>(new AuthController)->logout(),
+    'success'=>(new CartController)->success(),
 
 };

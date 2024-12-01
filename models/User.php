@@ -40,6 +40,8 @@ class User extends BaseModel {
         $stmt = $this->conn->prepare($sql);
         // thêm id vào data
         $data['id'] = $id;
+
+        
         $stmt->execute($data);
     }
 
