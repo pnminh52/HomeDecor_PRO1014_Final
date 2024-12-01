@@ -105,6 +105,9 @@
                 <a class="dropdown-item" href="<?= ROOT_URL . '?ctl=profile' ?>">Hồ sơ</a>
             </li>
             <li>
+                <a class="dropdown-item" href="<?= ROOT_URL . '?ctl=list-order' ?>">Đơn hàng</a>
+            </li>
+            <li>
                 <a class="dropdown-item" href="<?= ROOT_URL . '?ctl=logout' ?>">Đăng xuất</a>
             </li>
         <?php else: ?>

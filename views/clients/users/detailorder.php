@@ -1,4 +1,4 @@
-<?php include_once ROOT_DIR . "views/admin/header.php"?>
+<?php include_once ROOT_DIR . "views/clients/header.php"?>
 
 <div class="container mt-5">
     <div class="card">
@@ -18,6 +18,7 @@
                 <p><strong>Email :</strong><?= $order['email'] ?></p>
                 <p><strong>Điện thoại :</strong><?= $order['phone'] ?></p>
                 <p><strong>Địa chỉ :</strong><?= $order['address'] ?></p>
+                <p><strong>Trạng thái:</strong> <span class="badge bg-success"><?=getOrderStatus($order['status'])?> </span></p>
              </div>
              <!-- danh sách sản phẩm -->
               <div class="mb-4">
@@ -58,25 +59,18 @@
 </tfoot>
                 </table>
               </div>
-              <!-- cập nhập trạng thái đơn hàng -->
-               <div class="mb-4">
-                <h5>cập nhập trạng thái đơn hàng</h5>
-                <form action="" method="POST">
-                    <div class="mb-3">
-                        <label for="orderStatus" class="form-label">Trạng thái đơn hàng</label>
-                        <select name="status" id="orderStatus" class="form-select">
-                            <?php foreach($status as $key=>$value):?>
-                        <option value="<?=$key?>"<?=$order['status']==$key?'selected':''?>>
-                            <?=$value?>
-                        </option>
-                        <?php endforeach?>
-                        </select>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Cập nhật</button>
-                </form>
-               </div>
+              <div class="d-flex justify-content-between">
+                    <a href="orders.html" class="btn btn-secondary">Quay lại danh sách đơn hàng</a>
+                    <?php if($order['status']===1):?>
+                        <form action="" method="post">
+                        
+                        <button class="btn btn-danger">Hủy đơn hàng</button>
+
+                        </form>
+                    <?php endif?>
+                </div>
             </div>
     </div>
 </div>
 
-<?php include_once ROOT_DIR . "views/admin/footer.php" ?>
+<?php include_once ROOT_DIR . "views/clients/footer.php" ?>

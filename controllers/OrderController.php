@@ -17,4 +17,24 @@ public function showOrder()
     $order_details =(new Order)->listOrderDetail($id);
     return view("admin.orders.detail", compact('order','order_details','status'));
 }
+//!!Đây là list hiển thị danh sách hóa đơn của user theo id
+public function showOrderUser(){
+    $user_id=$_SESSION['user']['id'];
+    $orders=(new Order)->findOrderUser($user_id);
+    $categories=(new Category)-> all();
+    $user=$_SESSION['user'];
+
+    return view("clients.users.list-order", compact('orders','categories','user'));
+
+}
+public function detailOrderUser(){
+    $id = $_GET['id'];
+    if($_SERVER['REQUEST_METHOD']==="POST"){
+        (new Order)->updateStatus($id, 4);
+    }
+    $order = (new Order) ->find($id);
+    $status = (new Order)->status_details;
+    $order_details =(new Order)->listOrderDetail($id);
+    return view("clients.users.detailorder", compact('order','order_details','status'));
+}
 }
