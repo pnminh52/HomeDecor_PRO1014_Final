@@ -2,7 +2,8 @@
  class ProductController{
   public function list() {
     $id = $_GET['id'] ?? null;
-    $sort = $_GET['sort'] ?? '';
+    $sort = $_GET['sort'] ?? 'asc'; //!!Nếu không có giá trị sort thì mặc định là 'asc'
+    
     if (!$id || !filter_var($id, FILTER_VALIDATE_INT)) {
         header("Location: " . ROOT_URL);
         exit;
@@ -16,6 +17,7 @@
         compact('products', 'categories', 'category_name', 'title', 'id', 'sort')
     );
 }
+
 
 
    //Product details function
@@ -42,5 +44,13 @@ public function searchs() {
   $categories = (new Category)->all(); 
   return view('clients.products.search', compact('products', 'title', 'categories')); // Trả về view
 }
-
- }
+//!!Hàm này show tất cả sản phẩm
+public function showAllProducts() {
+  $sort = $_GET['sort'] ?? 'price';  
+  $order = $_GET['order'] ?? 'ASC'; 
+  $products = (new Product)->showAllProducts($sort, $order);
+  $title = "Cửa hàng";
+  $categories = (new Category)->all();
+  return view('clients.products.all', compact('products', 'title', 'categories', 'sort', 'order'));
+}
+}

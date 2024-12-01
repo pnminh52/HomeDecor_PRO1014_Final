@@ -27,3 +27,13 @@ function session_flash($key){
     return $message;
 }
 
+// chuyển đổi trạng thái đơn
+function translate_status($status){
+    $status_details = [
+        1=> 'chờ xử lý',
+        2=> 'Đang xử lý',
+        3=> 'Hoàn thành',
+        4=> 'Đã hủy',
+    ];
+    return $status_details[$status];
+}

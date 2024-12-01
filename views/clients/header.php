@@ -79,7 +79,7 @@
     </ul>
 </li>
 <li class="nav-item">
-                            <a class="nav-link" href="/homedecorfinal/shop">Cửa hàng</a>
+                            <a class="nav-link" href="<?= ROOT_URL . '?ctl=shop'?>">Cửa hàng</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="/homedecorfinal/contact">Liên hệ</a>

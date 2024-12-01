@@ -5,7 +5,7 @@
         <div class="row">
             <!-- Form thông tin thanh toán -->
             <div class="col-md-7">
-                <form action="" method="POST">
+                <form action="<?= ROOT_URL . '?ctl=checkout'?>" method="POST">
                     <!-- Thông tin người nhận -->
                     <div class="card mb-4">
                         <div class="card-header bg-primary text-white">
@@ -32,6 +32,8 @@
                                 <textarea class="form-control" id="address" name="address" rows="3"
                                     placeholder="Nhập địa chỉ giao hàng" required <?$user['address']?>></textarea>
                             </div>
+
+                            <input type="hidden" name="id" value="<?= $user['id']?>">
                         </div>
                     </div>
 

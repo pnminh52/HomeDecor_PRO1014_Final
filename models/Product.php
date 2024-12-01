@@ -23,12 +23,14 @@ class Product extends BaseModel{
         $stmt->execute(['id' => $id]);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+    
     public function listProductCategoryHome($id){
         $sql="SELECT p.*, cate_name FROM products p JOIN categories c ON p.category_id = c.id WHERE c.id=:id ORDER BY id DESC LIMIT 4";
         $stmt = $this->conn->prepare($sql);
         $stmt->execute(['id' => $id]);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+    //!!Đây là hàm danh sách các sản phẩm có liên quan
     public function listProductRelead($category_id,$id){
         $sql="SELECT p.*, cate_name FROM products p JOIN categories c ON p.category_id = c.id WHERE c.id=:category_id AND p.id <> :id ORDER BY id DESC LIMIT 4";
         $stmt = $this->conn->prepare($sql);
@@ -76,10 +78,22 @@ class Product extends BaseModel{
                 FROM products p 
                 JOIN categories c ON p.category_id = c.id 
                 WHERE p.name LIKE :query";
-        $stmt = $this->conn->prepare($sql); // Chuẩn bị câu truy vấn
-        $stmt->execute(['query' => '%' . $query . '%']); // Gán tham số truy vấn
-        return $stmt->fetchAll(PDO::FETCH_ASSOC); // Trả về danh sách kết quả
+        $stmt = $this->conn->prepare($sql); 
+        $stmt->execute(['query' => '%' . $query . '%']); 
+        return $stmt->fetchAll(PDO::FETCH_ASSOC); 
+    }
+    //!!Hàm này show tất cả sản phẩm
+    public function showAllProducts($sort = 'price', $order = 'ASC') {
+        $orderBy = "ORDER BY price $order";
+        $sql = "SELECT p.*, c.cate_name 
+                FROM products p 
+                JOIN categories c ON p.category_id = c.id 
+                $orderBy";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
     
     
+      
 }
