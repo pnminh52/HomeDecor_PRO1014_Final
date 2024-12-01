@@ -27,41 +27,52 @@
                         <tr>    
                             <th>#</th>
                             <th>Sản phẩm</th>
+                            <th>Ảnh</th>
                             <th>Số lượng</th>
-                            <th>Gía</th>
+                            <th>Giá tiền</th>
                             <th>Thành tiền</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php foreach($order_details as $stt => $detail) : ?>
                         <tr>
-                            <td><? $stt+1 ?></td>
+                            <td><?= $stt+1 ?></td>
                             <td><?= $detail['name']?></td>
-                            <td><?= $detail['price']?></td>
-                            <td><?= number_format($detail['price'])?></td>
+                            <td><img src="<?= ROOT_URL . "/productimages/" .  $detail['image']?>" width="60" alt=""></td>
                             <td><?= $detail['quantity']?></td>
-                            <td><?= number_format($detail['price'] * $detail['quantity'])?>VND</td>
-                        </tr>
-                    </tbody>
-                    <tfoot>
-                        <tr>
-                            <th colspan="4" class="text-end">Tổng cộng</th>
-                            <th><?= number_format($detail['total_price']) ?>VND</th>
+                            <td><?= number_format($detail['price'])?></td>
+                            <td><?= number_format($detail['quantity'] * $detail['price']) ?> VND</td>
                         </tr>
                         <?php endforeach ?>
-                    </tfoot>
+                    </tbody>
+                    
+                    <tfoot>
+    <tr>
+        <th colspan="4" class="text-end">Tổng cộng</th>
+        <th>
+            <?= number_format(array_reduce($order_details, function ($sum, $detail) {
+                return $sum + ($detail['price'] * $detail['quantity']);
+            }, 0)) ?> VND
+        </th>
+    </tr>
+</tfoot>
                 </table>
               </div>
               <!-- cập nhập trạng thái đơn hàng -->
                <div class="mb-4">
                 <h5>cập nhập trạng thái đơn hàng</h5>
-                <form action="/update-order-status" method="POST">
+                <form action="" method="POST">
                     <div class="mb-3">
                         <label for="orderStatus" class="form-label">Trạng thái đơn hàng</label>
-                        <select name="orderStatus" id="orderStatus" class="form-select">
-                            <option value="pending"></option>
+                        <select name="status" id="orderStatus" class="form-select">
+                            <?php foreach($status as $key=>$value):?>
+                        <option value="<?=$key?>"<?=$order['status']==$key?'selected':''?>>
+                            <?=$value?>
+                        </option>
+                        <?php endforeach?>
                         </select>
                     </div>
+                    <button type="submit" class="btn btn-primary">Cập nhật</button>
                 </form>
                </div>
             </div>

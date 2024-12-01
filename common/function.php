@@ -28,7 +28,7 @@ function session_flash($key){
 }
 
 // chuyển đổi trạng thái đơn
-function translate_status($status){
+function getOrderStatus($status){
     $status_details = [
         1=> 'chờ xử lý',
         2=> 'Đang xử lý',

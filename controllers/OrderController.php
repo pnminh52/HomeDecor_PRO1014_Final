@@ -7,22 +7,14 @@ class OrderController{
 }
 public function showOrder()
 {
-    if (!isset($_GET['id'])) {
-        // Nếu không có ID, bạn có thể hiển thị thông báo lỗi
-        echo "Không tìm thấy đơn hàng!";
-        return;
-    }
-
     $id = $_GET['id'];
-    $order = (new Order)->find($id);
-    
-    if (!$order) {
-        // Nếu không tìm thấy đơn hàng
-        echo "Đơn hàng không tồn tại!";
-        return;
+    if($_SERVER['REQUEST_METHOD']==="POST"){
+        $status=$_POST['status'];
+        (new Order)->updateStatus($id, $status);
     }
-
-    return view("admin.orders.detail", compact('order'));
+    $order = (new Order) ->find($id);
+    $status = (new Order) ->status_details;
+    $order_details =(new Order)->listOrderDetail($id);
+    return view("admin.orders.detail", compact('order','order_details','status'));
 }
-
 }

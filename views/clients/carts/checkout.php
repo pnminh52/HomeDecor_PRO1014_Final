@@ -91,8 +91,14 @@
                     </div>
                     <!-- Tổng tiền -->
                     <div class="card-footer text-end fw-bold">
-                        Tổng tiền: <span class="text-danger"><?= number_format($sumPrice)?> VNĐ</span>
-                    </div>
+    Tổng tiền: 
+    <span class="text-danger">
+        <?= number_format(array_reduce($carts, function ($sum, $cart) {
+            return $sum + ($cart['price'] * $cart['quantity']);
+        }, 0)) ?> VNĐ
+    </span>
+</div>
+
                 </div>
             </div>
         </div>
