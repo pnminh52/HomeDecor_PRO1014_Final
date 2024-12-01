@@ -26,10 +26,10 @@
       <!-- <td><= $order['created_at']?></td> -->
       <!-- <td><= $order['id'] ?></td> -->
        <!-- tôi comment lại do lỗi -->
-        <td>  <?=date('d-m-Y H:i:s' , strtotime($oder['created_at']))?></td>
+        <td>  <?=date('d-m-Y H:i:s' , strtotime($order['created_at']))?></td>
 
       <td>
-        <a href="<?ADMIN_URL . '?ctl=detail-order'?>" class="btn btn-primary">Cập nhật</a>
+      <a href="<?= ADMIN_URL . '?ctl=detail-order' ?>" class="btn btn-primary">Cập nhật</a>
       </td>
     </tr>
     <?php endforeach?>

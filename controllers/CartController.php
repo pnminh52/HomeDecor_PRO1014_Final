@@ -119,7 +119,7 @@ class CartController {
         foreach ($carts as $id => $cart){
             $or_detail = [
                 'order_id' => $order_id,
-                'product' => $id,
+                'product_id' => $id,
                 'price' => $cart['price'],
                 'quantity'=> $cart['quantity'],
             ];

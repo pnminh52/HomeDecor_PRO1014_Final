@@ -21,6 +21,7 @@ class Order extends BaseModel
 
         $stmt = $this->conn->prepare($sql);
         $stmt->execute(['id' => $id]);
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
     //Thêm hóa đơn

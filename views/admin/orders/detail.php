@@ -9,7 +9,7 @@
         <div class="card-body">
             <div class="mb-4">
                 <h5>Mã đơn hàng: #<?= $order['id']?></h5>
-                <p><strong>Ngày đặt hàng : </strong> <? = date('d-m-Y H:i:s', strtotime($oder['created_at']))?></p>
+                <p><strong>Ngày đặt hàng : </strong> <?= date('d-m-Y H:i:s', strtotime($order['created_at']))?></p>
             </div>
             <!-- thông tin khách hàng -->
              <div class="mb-4">
