@@ -35,6 +35,6 @@ public function detailOrderUser(){
     $order = (new Order) ->find($id);
     $status = (new Order)->status_details;
     $order_details =(new Order)->listOrderDetail($id);
-    return view("clients.users.detailorder", compact('order','order_details','status'));
+    return view("clients.users.detail-order", compact('order','order_details','status'));
 }
 }
