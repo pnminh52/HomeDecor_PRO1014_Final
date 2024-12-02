@@ -88,15 +88,11 @@
                             <a class="nav-link text-warning" href="/homedecorfinal/decoration">Thiết kế nội thất</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/homedecorfinal/inspiration">Góc cảm hứng</a>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link" href="<?= ROOT_URL . '?ctl=view-cart' ?>">Giỏ hàng (<?= $_SESSION['totalQuantity']?? '0' ?>)</a>
                         </li>
                         <li class="nav-item dropdown">
     <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="authDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
         <i class="bi bi-person me-1"></i>
-        
     </a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="authDropdown">
         <?php if (isset($_SESSION['user'])): ?>
