@@ -32,7 +32,13 @@
 
       <td>
       <a href="<?= ROOT_URL . '?ctl=order-detail-users&id=' . $order['id'] ?>" class="btn btn-primary">Chi tiết</a>
-      Hủy
+      <?php if($order['status']===1):?>
+                        <form action="" method="post">
+                        
+                        <button class="btn btn-danger">Hủy đơn hàng</button>
+
+                        </form>
+                    <?php endif?>
       </td>
     </tr>
     <?php endforeach?>
