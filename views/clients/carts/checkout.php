@@ -34,14 +34,60 @@
     color: #fff !important; 
     background-color: #000 !important;
 }
+.card {
+    border-radius: 0 !important; 
+}
+
+.card-header, .card-body, .card-footer {
+    border-radius: 0 !important; 
+}
+
 </style>
 <div class="container mt-5">
 <div class="category-header">
     <h2>Thông tin thanh toán </h2>
     </div>
         <div class="row">
-            <!-- Form thông tin thanh toán -->
-            <div class="col-md-7">
+        
+
+            <!-- Thông tin giỏ hàng -->
+            <div class="col-md-5">
+                <div class="card">
+                    <div class="card-header text-black">
+                        <h5>Thông tin giỏ hàng</h5>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-group">
+                            <!-- Sản phẩm 1 -->
+                             <?php foreach($carts as $cart): ?>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h6 class="mb-0"><?=$cart['name']?></h6>
+                                    <h6 class="mb-0">
+                                        <img src="<?= ROOT_URL . '/productimages/' . $cart['image'] ?>" alt="<?= $cart['name'] ?>" style="max-width: 150px; height: auto;">
+                                    </h6>
+                                    <small class="text-muted">Số lượng: <?=$cart['quantity']?></small>
+
+                                </div>
+                                <span class="text-danger"> <?=number_format($cart['price']*$cart['quantity'])?> VNĐ</span>
+                            </li>
+                           <?php endforeach?>
+                        </ul>
+                    </div>
+                    <!-- Tổng tiền -->
+                    <div class="card-footer text-end fw-bold">
+    Tổng tiền: 
+    <span class="text-danger">
+        <?= number_format(array_reduce($carts, function ($sum, $cart) {
+            return $sum + ($cart['price'] * $cart['quantity']);
+        }, 0)) ?> VNĐ
+    </span>
+</div>
+
+                </div>
+            </div>
+                <!-- Form thông tin thanh toán -->
+                <div class="col-md-7">
                 <form action="<?= ROOT_URL . '?ctl=checkout'?>" method="POST">
                     <!-- Thông tin người nhận -->
                     <div class="card mb-4">
@@ -100,39 +146,6 @@
                         </button>
                     </div>
                 </form>
-            </div>
-
-            <!-- Thông tin giỏ hàng -->
-            <div class="col-md-5">
-                <div class="card">
-                    <div class="card-header bg-info text-white">
-                        <h5>Thông tin giỏ hàng</h5>
-                    </div>
-                    <div class="card-body">
-                        <ul class="list-group">
-                            <!-- Sản phẩm 1 -->
-                             <?php foreach($carts as $cart): ?>
-                            <li class="list-group-item d-flex justify-content-between align-items-center">
-                                <div>
-                                    <h6 class="mb-0"><?=$cart['name']?></h6>
-                                    <small class="text-muted">Số lượng: <?=$cart['quantity']?></small>
-                                </div>
-                                <span> <?=number_format($cart['price']*$cart['quantity'])?></span>
-                            </li>
-                           <?php endforeach?>
-                        </ul>
-                    </div>
-                    <!-- Tổng tiền -->
-                    <div class="card-footer text-end fw-bold">
-    Tổng tiền: 
-    <span class="text-danger">
-        <?= number_format(array_reduce($carts, function ($sum, $cart) {
-            return $sum + ($cart['price'] * $cart['quantity']);
-        }, 0)) ?> VNĐ
-    </span>
-</div>
-
-                </div>
             </div>
         </div>
     </div>
