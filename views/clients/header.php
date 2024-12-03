@@ -44,6 +44,7 @@
             font-size: 14px;
             color:rgb(0, 0, 0); 
         }
+        
     </style>
     <div class="top-bar">
         <div class="container">

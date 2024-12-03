@@ -118,16 +118,9 @@
         padding: 15px;
         text-align: right;
     }
-    .btn-danger,
-.btn-warning {
-    opacity: 0.7;
-    transition: opacity 0.3s ease-in-out;
-}
 
-.btn-danger:hover, 
-.btn-warning:hover {
-    opacity: 1; 
-}
+
+
 
 .quantity-container {
     display: flex;
@@ -181,6 +174,38 @@
     line-height: 20px;
     font-weight: bold;
     margin-left: 10px;
+}
+
+
+.deletebtn, .detailbtn {
+    display: inline-flex;
+    align-items: center;
+    padding: 5px 10px;
+    text-decoration: none; 
+    font-size: 14px;
+}
+
+.deletebtn {
+    background-color: #f44336; 
+    color: white;
+    border: 1px solid #f44336;
+}
+
+
+.detailbtn {
+    background-color: #fff;
+    color: black;
+    border: 1px solid black;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.detailbtn:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+.deletebtn i, .detailbtn i {
+    margin-right: 5px; 
 }
 
 
@@ -278,12 +303,13 @@
 
                         <td class="text-danger"><?= number_format($cart['price'] * $cart['quantity']) ?>VNĐ</td>
                         <td>
-                        <a href="<?= ROOT_URL . '?ctl=delete-cart&id=' . $id?>" type="button" class="btn btn-danger btn-sm">
-                                <i class="bi bi-trash"></i> Xóa
-                            </a>
-                            <a href="<?= ROOT_URL . '?ctl=details&id=' . $id?>" type="button" class="btn btn-warning btn-sm">
+                        <a href="<?= ROOT_URL . '?ctl=details&id=' . $id?>" type="button" class="detailbtn">
                                 <i class="bi bi-search"></i> Chi tiết
                             </a>
+                        <a href="<?= ROOT_URL . '?ctl=delete-cart&id=' . $id?>" type="button" class="deletebtn ">
+                                <i class="bi bi-trash"></i> Xóa
+                            </a>
+                            
                         </td>
                     </tr>
                     <?php endforeach ?>
