@@ -98,9 +98,6 @@
         <?php if (isset($_SESSION['user'])): ?>
             <!-- Đã đăng nhập -->
             <li>
-                <a class="dropdown-item" href="<?= ROOT_URL . '?ctl=profile' ?>">Hồ sơ</a>
-            </li>
-            <li>
                 <a class="dropdown-item" href="<?= ROOT_URL . '?ctl=list-order' ?>">Đơn hàng</a>
             </li>
             <li>

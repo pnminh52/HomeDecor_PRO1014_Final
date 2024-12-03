@@ -30,7 +30,7 @@ function session_flash($key){
 // chuyển đổi trạng thái đơn
 function getOrderStatus($status){
     $status_details = [
-        1=> 'chờ xử lý',
+        1=> 'Chờ xử lý',
         2=> 'Đang xử lý',
         3=> 'Hoàn thành',
         4=> 'Đã hủy',

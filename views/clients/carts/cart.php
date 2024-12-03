@@ -274,7 +274,7 @@
             <table class="table table-bordered align-middle">
                 <thead class="table">
                     <tr>
-                        <th scope="col">#ID</th>
+                        <th scope="col">STT</th>
                         <th scope="col">Hình ảnh</th>
                         <th scope="col">Tên sản phẩm</th>
                         <th scope="col">Giá</th>
@@ -284,9 +284,11 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach($carts as $id => $cart) : ?>
+                    <?php
+                    $stt=1;
+                    foreach($carts as $id => $cart) : ?>
                     <tr>
-                        <th scope="row"><?= $id ?></th>
+                        <th scope="row"><?= $stt ?></th>
                         <td>
                             <img src="<?= ROOT_URL."/productimages/". $cart['image'] ?>" alt=""  style="width: 80px; height: auto" />
                         </td>

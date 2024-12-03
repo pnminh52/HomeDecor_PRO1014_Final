@@ -143,7 +143,7 @@ form select:focus {
                 <h5><?= $product['name'] ?></h5>
             </a>
             <div>
-                <span class="product-price"><?= number_format($product['price'])?>đ</span>
+                <span class="product-price text-danger"><?= number_format($product['price'])?>đ</span>
             </div>
         </div>
         <div class="product-buttons d-flex">

@@ -33,14 +33,7 @@
         margin-top: 10px;
     }
 
-    h2 {
-        font-size: 1.5rem !important;
-        font-weight: bold !important;
-        margin-top: 20px !important;
-        margin-bottom: 30px !important;
-        border-bottom: 1px solid #ddd;
-        height: 40px !important;
-    }
+
 
     .product-name {
         font-size: 1rem;
@@ -56,30 +49,52 @@
         font-size: 1rem;
         font-weight: lighter;
     }
+    .category-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 10px;
+        margin-bottom: 30px;
+        margin-top:20px
+    }
+
+    .category-header h2 {
+        font-size: 1.5rem !important;
+        font-weight: thin !important;
+        margin: 0; 
+        font-family: Arial, sans-serif;
+    }
 </style>
 
 <div class="container mt-5">
+    <div class="category-header">
     <h2><?= $title ?></h2>
+    </div>
     <div class="row g-4">
         <?php if (!empty($products)): ?>
             <?php foreach ($products as $product): ?>
-                <div class="col-md-3">
-                    <div class="product-box">
-                        <img src="<?= ROOT_URL . '/productimages/' . $product['image'] ?>" alt="Product Image" class="product-img">
-                        <div class="product-info">
-                            <a href="<?= ROOT_URL . '?ctl=details&id=' . $product['id'] ?>" class="product-name">
-                                <h5><?= $product['name'] ?></h5>
-                            </a>
-                            <div>
-                                <span class="product-price"><?= number_format($product['price']) ?>đ</span>
-                            </div>
-                        </div>
-                        <div class="product-buttons d-flex">
-                            <a class="btn btn-outline-dark" href="<?= ROOT_URL . '?ctl=details&id=' . $product['id'] ?>" style="border-radius: 0;">Xem thêm</a>
-                        </div>
-                    </div>
+            <div class="col-md-3">
+        <div class="product-box">
+    
+
+            <img src="<?= ROOT_URL . '/productimages/' .  $product['image']?>" alt="Product Image" class="product-img">
+            <div class="product-info">
+                <a href="<?=ROOT_URL.'?ctl=details&id=' . $product['id']?>" class="product-name">
+                    <h5><?= $product['name'] ?></h5>
+                </a>
+                <div>
+                    <span class="product-price text-danger"><?= number_format($product['price'])?>đ</span>
                 </div>
-            <?php endforeach; ?>
+            </div>
+            <div class="product-buttons d-flex">
+        <a class="btn btn-outline-dark " href="<?= ROOT_URL.'?ctl=details&id=' . $product['id'] ?>"  style="border-radius: 0;">Xem thêm</a>
+    </div>
+
+
+        </div>
+    </div>
+        <?php endforeach?>
         <?php else: ?>
             <div>Không tìm thấy sản phẩm phù hợp!</div>
         <?php endif; ?>
