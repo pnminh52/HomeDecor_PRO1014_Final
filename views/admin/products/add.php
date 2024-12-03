@@ -1,6 +1,6 @@
 
 <?php include_once ROOT_DIR . "views/admin/header.php" ?>
-<div class="conteiner">
+<div class="container">
     <form action="<?= ADMIN_URL . '?ctl=storesp'?>" method="post" enctype="multipart/form-data">
         <div class="mb-3">
             <label for="" class="form-label">Tên sản phẩm</label>

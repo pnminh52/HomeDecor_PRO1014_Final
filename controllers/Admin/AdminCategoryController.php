@@ -39,12 +39,12 @@ class AdminCategoryController {
        $products = (new Product)-> listProductCategory($id);
        if($products){
         $_SESSION['message']="Không thể xóa danh mục có sản phẩm";
-        header("location:" . ADMIN_URL . "?ctl_listdm");
+        header("location:" . ADMIN_URL . "?ctl=listdm");
         return;
        }
        (new Category)->delete($id);
        $_SESSION['message']="Xóa danh mục thành công";
-       header("location:" . ADMIN_URL . "?ctl_listdm");
+       header("location:" . ADMIN_URL . "?ctl=listdm");
        return;
     }
 

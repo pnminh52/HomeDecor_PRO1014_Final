@@ -1,4 +1,4 @@
-<?php include_once ROOT_DIR . "views/admin/header.php"?>
+<!-- <?php include_once ROOT_DIR . "views/admin/header.php"?>
 
 <div class="container mt-5">
     <div class="row justify-content-center">
@@ -37,4 +37,4 @@
       </div>
     </div>
 
-<?php include_once ROOT_DIR . "views/admin/footer.php" ?>
+<?php include_once ROOT_DIR . "views/admin/footer.php" ?> -->

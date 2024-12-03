@@ -1,6 +1,6 @@
 
 <?php include_once ROOT_DIR . "views/admin/header.php" ?>
-<div class="conteiner">
+<div class="container">
 <?php if(isset($_SESSION['message']) && $_SESSION['message'] != ''): ?>
         <div class="mt-3 mb-3 alert alert-success">
             <?= $_SESSION['message'] ?>
