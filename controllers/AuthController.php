@@ -49,7 +49,7 @@ class AuthController {
                     $_SESSION['user'] = $user;
                     // nếu role = 1, vào admin, ngược lại vào trang chủ
                     if($user['role'] == 'admin'){
-                        header("Location:" . ADMIN_URL);
+                        header("Location:" . ADMIN_URL . "?ctl=listdm");
                         die;
                     }
                     header("Location:" . ROOT_URL);
