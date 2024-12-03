@@ -114,6 +114,7 @@
     font-weight: lighter;
 }
 .content-section {
+    
  margin-top: 20px;
   display: flex;
   align-items: center;
@@ -439,8 +440,8 @@
       hiện đã mở 10 cửa hàng tại Việt Nam.
     </p>
     <div class="product-buttons d-flex">
-    <a class="btn btn-outline-dark " href="">Xem thêm</a>
-</div>
+                    <a class="btn btn-outline-dark" href="<?= ROOT_URL ?>" style="border-radius: 0;">Xem thêm</a>
+                </div>
   </div>
   <div class="image-content">
     <img src="https://nhaxinh.com/wp-content/uploads/2022/07/gioi-thieu-nha-xinh-moi-25-7-22-1200x800.jpg" alt="Hình minh họa ghế sofa" />

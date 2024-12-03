@@ -34,15 +34,6 @@
     margin-top: 10px; 
 }
 
-h2 {
-    font-size: 1.5rem !important; 
-    font-weight: lighter !important;
-    margin-top: 20px !important;
-    margin-bottom: 30px !important;
-    border-bottom: 1px solid #ddd;
-    height: 40px !important;
-    font-family: 'Arial', sans-serif !important; 
-}
 
 .product-name {
     font-size: 1rem;
@@ -76,15 +67,54 @@ form select {
 form select:focus {
     outline: none; 
 }
+.banner {
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+.banner img {
+    height: 400px;
+    object-fit: cover; 
+    width: 100%; 
+}
+
+.banner-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; 
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; 
+    align-items: flex-start; 
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.banner p {
+    color: white;
+    margin: 0;
+    padding-left: 100px;
+    font-size:20px; 
+    font-weight:normal;
+}
 </style>
+<div class="banner">
+    <img src="https://nhaxinh.com/wp-content/uploads/2023/07/BST-Coastal-3-3.jpg" alt="">
+    <div class="banner-overlay">
+        <p>Sản phẩm / <?= $category_name ?></p>
+    </div>
+</div>
 <div class="container mt-5">
-<h2><?= $category_name?></h2>
 <form method="GET" action="">
     <input type="hidden" name="ctl" value="category">
     <input type="hidden" name="id" value="<?= htmlspecialchars($id) ?>">
+    <h2 style="font-weight: bold; font-size: small; margin-bottom: 5px;">Giá</h2>    <input type="hidden" name="ctl" value="shop">
     <select name="sort" onchange="this.form.submit()">
-        <option value="asc" <?= $sort === 'asc' ? 'selected' : '' ?>>Giá: Thấp đến cao</option>
-        <option value="desc" <?= $sort === 'desc' ? 'selected' : '' ?>>Giá: Cao đến tthấp</option>
+        <option value="asc" <?= $sort === 'asc' ? 'selected' : '' ?>>Thấp đến cao</option>
+        <option value="desc" <?= $sort === 'desc' ? 'selected' : '' ?>>Cao đến tthấp</option>
     </select>
 </form>
     <div class="row g-4">

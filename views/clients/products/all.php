@@ -34,15 +34,7 @@
     margin-top: 10px; 
 }
 
-h2 {
-    font-size: 1.5rem !important; 
-    font-weight: lighter !important;
-    margin-top: 20px !important;
-    margin-bottom: 30px !important;
-    border-bottom: 1px solid #ddd;
-    height: 40px !important;
-    font-family: 'Arial', sans-serif !important; 
-}
+
 
 .product-name {
     font-size: 1rem;
@@ -65,7 +57,7 @@ form {
 
 form select {
     font-size: 1rem;
-    padding: 5px;
+    padding: 10px;
     border: none; 
     border-bottom: 1px solid #ccc; 
     width: 200px; 
@@ -76,14 +68,67 @@ form select {
 form select:focus {
     outline: none; 
 }
+
+
+
+
+
+
+.banner {
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+.banner img {
+    height: 400px;
+    object-fit: cover; 
+    width: 100%; 
+}
+
+.banner-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; 
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; 
+    align-items: flex-start; 
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.banner p {
+    color: white;
+    margin: 0;
+    padding-left: 100px;
+    font-size:20px; 
+    font-weight:normal;
+}
+
+
+
+
+    
+
+
 </style>
+<div class="banner">
+    <img src="https://nhaxinh.com/wp-content/uploads/2022/04/banner-trang-chu-san-pham-dep-oki.jpg" alt="">
+    <div class="banner-overlay">
+        <p>Trang chủ / <?= $title ?></p>
+    </div>
+</div>
+
+
 <div class="container mt-5">
-    <h2><?= $title ?></h2>
     <form method="GET" action="">
-    <input type="hidden" name="ctl" value="shop">
+    <h2 style="font-weight: bold; font-size: small; margin-bottom: 5px;">Giá</h2>    <input type="hidden" name="ctl" value="shop">
     <select name="order" onchange="this.form.submit()">
-        <option value="ASC" <?= $order === 'ASC' ? 'selected' : '' ?>>Giá: Thấp đến cao</option>
-        <option value="DESC" <?= $order === 'DESC' ? 'selected' : '' ?>>Giá: Cao đến thấp</option>
+        <option value="ASC" <?= $order === 'ASC' ? 'selected' : '' ?>>Thấp đến cao</option>
+        <option value="DESC" <?= $order === 'DESC' ? 'selected' : '' ?>>Cao đến thấp</option>
     </select>
 </form>
     <div class="row g-4">

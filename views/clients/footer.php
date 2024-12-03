@@ -4,7 +4,7 @@
 </body>
 
 <footer class="text-center text-lg-start bg-body-tertiary text-muted">
-  <section class="bg-white">
+  <div class="bg-white">
     <div class="container text-center text-md-start mt-5">
       <div class="row mt-3">
         <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
@@ -47,17 +47,12 @@
         </div>
       </div>
     </div>
-  </section>
+  </div>
 
   <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
     © 2024 - Bản quyền của HomeDecor - Thương hiệu thuộc AKA Furniture
   </div>
 </footer>
 
-<style>
-  footer {
-    margin-top: 40px;
-  }
-</style>
 
 </html>

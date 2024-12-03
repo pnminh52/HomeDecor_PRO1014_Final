@@ -13,7 +13,6 @@
     <style>
         .nav-item.dropdown:hover .dropdown-menu {
             display: block;
-            opacity: 1;
         }
 
         .input-group .form-control {
@@ -82,10 +81,10 @@
                             <a class="nav-link" href="<?= ROOT_URL . '?ctl=shop'?>">Cửa hàng</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/homedecorfinal/contact">Liên hệ</a>
+                            <a class="nav-link" >Liên hệ</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-warning" href="/homedecorfinal/decoration">Thiết kế nội thất</a>
+                            <a class="nav-link text-warning" >Thiết kế nội thất</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="<?= ROOT_URL . '?ctl=view-cart' ?>">Giỏ hàng (<?= $_SESSION['totalQuantity']?? '0' ?>)</a>
