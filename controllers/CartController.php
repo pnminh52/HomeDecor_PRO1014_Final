@@ -84,9 +84,10 @@ class CartController {
             return header("Location: " . ROOT_URL . "?ctl=view-cart");
         }
         $user = $_SESSION['user'];
+        $categories = (new Category)->all();
         $carts = $_SESSION['cart'] ?? [];
         $sumPrice = (new CartController)->sumPrice();
-        return view("clients.carts.checkout", compact('user', 'carts', 'sumPrice'));
+        return view("clients.carts.checkout", compact('user', 'carts', 'sumPrice','categories'));
     }
 
     // thanh toán
@@ -100,9 +101,7 @@ class CartController {
             'role'=> $_SESSION['user']['role'],
             'active'=> $_SESSION['user']['active'],
         ];
-
         $sumPrice = (new CartController)->sumPrice();
-
         // lấy thông tin thanh toán
         $order = [
             'user_id' => $_POST['id'],
@@ -138,7 +137,8 @@ class CartController {
     }
 
     public function success(){
-        return view("clients.carts.success");
+        $categories = (new Category)->all();
+        return view("clients.carts.success",compact('categories'));
     }
     
     
