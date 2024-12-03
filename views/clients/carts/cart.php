@@ -288,7 +288,7 @@
                     $stt=1;
                     foreach($carts as $id => $cart) : ?>
                     <tr>
-                        <th scope="row"><?= $stt ?></th>
+                        <th scope="row"><?= $stt++ ?></th>
                         <td>
                             <img src="<?= ROOT_URL."/productimages/". $cart['image'] ?>" alt=""  style="width: 80px; height: auto" />
                         </td>

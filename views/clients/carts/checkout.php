@@ -1,14 +1,51 @@
 <?php include_once ROOT_DIR ."views/clients/header.php" ?>
+<style>
+.category-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 10px;
+        margin-bottom: 30px;
+        margin-top:20px
+    }
 
+    .category-header h2 {
+        font-size: 1.5rem !important;
+        font-weight: thin !important;
+        margin: 0; 
+        font-family: Arial, sans-serif;
+    }
+    .btnupdate i {
+    margin-right: 5px; 
+    font-size: 18px; 
+}
+.btnupdate {
+    color: #000 !important; 
+    background-color: #fff !important;
+    border: 1px solid #000 !important;
+    border-radius: 0 !important; 
+    transition: all 0.3s ease-in-out !important; 
+    padding: 8px 16px; 
+    font-size: 16px;
+    text-decoration: none;
+}
+.btnupdate:hover {
+    color: #fff !important; 
+    background-color: #000 !important;
+}
+</style>
 <div class="container mt-5">
-        <h1 class="mb-4">Thông tin thanh toán</h1>
+<div class="category-header">
+    <h2>Thông tin thanh toán </h2>
+    </div>
         <div class="row">
             <!-- Form thông tin thanh toán -->
             <div class="col-md-7">
                 <form action="<?= ROOT_URL . '?ctl=checkout'?>" method="POST">
                     <!-- Thông tin người nhận -->
                     <div class="card mb-4">
-                        <div class="card-header bg-primary text-white">
+                        <div class="card-header text-black">
                             <h5>Thông tin người nhận</h5>
                         </div>
                         <div class="card-body">
@@ -34,16 +71,9 @@
                             </div>
 
                             <input type="hidden" name="id" value="<?= $user['id']?>">
-                        </div>
-                    </div>
-
-                    <!-- Phương thức thanh toán -->
-                    <div class="card mb-4">
-                        <div class="card-header bg-secondary text-white">
-                            <h5>Phương thức thanh toán</h5>
-                        </div>
-                        <div class="card-body">
-                            <div class="form-check mb-3">
+                            <div class="mb-3">
+                            <label for="address" class="form-label">Phương thức thanh toán</label>
+                            <div class="form-check ">
                                 <input class="form-check-input" type="radio" name="payment_method" id="cod" value="cod"
                                     checked>
                                 <label class="form-check-label" for="cod">
@@ -58,11 +88,14 @@
                                 </label>
                             </div>
                         </div>
+                        
+                            
+                      
+                        </div>
                     </div>
-
                     <!-- Nút xác nhận -->
                     <div class="text-end">
-                        <button type="submit" class="btn btn-success btn-lg">
+                        <button type="submit" class="btn btnupdate">
                             <i class="bi bi-check-circle"></i> Xác nhận thanh toán
                         </button>
                     </div>

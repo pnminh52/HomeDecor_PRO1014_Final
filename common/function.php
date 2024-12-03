@@ -30,10 +30,14 @@ function session_flash($key){
 // chuyển đổi trạng thái đơn
 function getOrderStatus($status){
     $status_details = [
-        1=> 'Chờ xử lý',
-        2=> 'Đang xử lý',
-        3=> 'Hoàn thành',
-        4=> 'Đã hủy',
+        1 => ['text' => 'Chờ xử lý', 'color' => 'orange'],
+        2 => ['text' => 'Đang xử lý', 'color' => 'blue'],
+        3 => ['text' => 'Hoàn thành', 'color' => 'green'],
+        4 => ['text' => 'Đã hủy', 'color' => 'red'],
     ];
-    return $status_details[$status];
+
+    $status_text = $status_details[$status]['text'];
+    $status_color = $status_details[$status]['color'];
+
+    return "<span style='color: $status_color;'>$status_text</span>";
 }
