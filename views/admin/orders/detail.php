@@ -1,48 +1,5 @@
 <?php include_once ROOT_DIR . "views/admin/header.php"?>
-<style>
-    .category-header h2 {
-        font-size: 1.5rem !important;
-        font-weight: thin !important;
-        margin: 0;
-        font-family: Arial, sans-serif;
-    }
 
-    .category-header {
-        display: flex;
-        align-items: center;
-        border-bottom: 1px solid #ddd;
-        padding-bottom: 10px;
-        margin-bottom: 30px;
-        margin-top: 20px;
-    }
-
- 
-
-
-
-
-    /* Nút "Sửa danh mục" */
-    .btnupdate {
-        background-color: #007bff;
-        color: white;
-        padding: 10px 20px;
-        text-decoration: none;
-        display: inline-block;
-        border: 1px solid #007bff;
-
-    }
-
-
-    /* Bảng */
-    .table th, .table td {
-        text-align: center;
-        vertical-align: middle;
-    }
-
-    .table .btn {
-        margin: 0 5px;
-    }
-</style>
 <div class="container mt-5">
 
     <div class="category-header">
@@ -140,3 +97,47 @@
 
 
 <?php include_once ROOT_DIR . "views/admin/footer.php" ?>
+<style>
+    .category-header h2 {
+        font-size: 1.5rem !important;
+        font-weight: thin !important;
+        margin: 0;
+        font-family: Arial, sans-serif;
+    }
+
+    .category-header {
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 10px;
+        margin-bottom: 30px;
+        margin-top: 20px;
+    }
+
+ 
+
+
+
+
+    /* Nút "Sửa danh mục" */
+    .btnupdate {
+        background-color: #007bff;
+        color: white;
+        padding: 10px 20px;
+        text-decoration: none;
+        display: inline-block;
+        border: 1px solid #007bff;
+
+    }
+
+
+    /* Bảng */
+    .table th, .table td {
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    .table .btn {
+        margin: 0 5px;
+    }
+</style>

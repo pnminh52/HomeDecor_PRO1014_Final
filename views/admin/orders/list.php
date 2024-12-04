@@ -1,37 +1,5 @@
 <?php include_once ROOT_DIR . "views/admin/header.php"?>
-<style>
-  
-  .cart-header h2 {
-        font-size: 1.5rem !important;
-        font-weight: thin !important;
-        margin: 0;
-        font-family: Arial, sans-serif;
-    }
 
-    .cart-header {
-        display: flex;
-        align-items: center;
-        border-bottom: 1px solid #ddd;
-        padding-bottom: 10px;
-        margin-bottom: 30px;
-        margin-top: 20px;
-    }
-    .btnedit {
-        background-color: #007bff;
-        color: white;
-        padding: 10px 20px;
-        text-decoration: none;
-        display: inline-block;
-    }
-    .table th, .table td {
-        text-align: center;
-        vertical-align: middle;
-    }
-
-    .table .btn {
-        margin: 0 5px;
-    }
-</style>
 <div class="container">
 <div class="cart-header ">
     <h2>Danh sách đơn hàng</h2>
@@ -73,4 +41,39 @@
 </div>
 
 <?php include_once ROOT_DIR . "views/admin/footer.php" ?>
+
+
+<style>
+  
+  .cart-header h2 {
+        font-size: 1.5rem !important;
+        font-weight: thin !important;
+        margin: 0;
+        font-family: Arial, sans-serif;
+    }
+
+    .cart-header {
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 10px;
+        margin-bottom: 30px;
+        margin-top: 20px;
+    }
+    .btnedit {
+        background-color: #007bff;
+        color: white;
+        padding: 10px 20px;
+        text-decoration: none;
+        display: inline-block;
+    }
+    .table th, .table td {
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    .table .btn {
+        margin: 0 5px;
+    }
+</style>
 
