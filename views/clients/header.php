@@ -88,7 +88,7 @@
                             <a class="nav-link text-warning" >Thiết kế nội thất</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="<?= ROOT_URL . '?ctl=view-cart' ?>">Giỏ hàng (<?= $_SESSION['totalQuantity']?? '0' ?>)</a>
+                            <a class="nav-link" href="<?= ROOT_URL . '?ctl=view-cart' ?>"><i class="bi bi-cart-plus"></i> (<?= $_SESSION['totalQuantity']?? '0' ?>)</a>
                         </li>
                         <li class="nav-item dropdown">
     <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="authDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">

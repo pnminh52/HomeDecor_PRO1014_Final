@@ -14,7 +14,8 @@
 }
 
 .cart-count-badge {
-    position: relative;
+    position: flex;
+    left: 0px;
     display: inline-block;
     background-color: red;
     color: white;

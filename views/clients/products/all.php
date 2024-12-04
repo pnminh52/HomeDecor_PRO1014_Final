@@ -148,6 +148,7 @@ form select:focus {
         </div>
         <div class="product-buttons d-flex">
     <a class="btn btn-outline-dark " href="<?= ROOT_URL.'?ctl=details&id=' . $product['id'] ?>"  style="border-radius: 0;">Xem thêm</a>
+
 </div>
 
 
