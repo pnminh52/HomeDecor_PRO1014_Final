@@ -1,15 +1,33 @@
 <?php include_once ROOT_DIR ."views/clients/header.php" ?>
 
 <style>
-.cart-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        border-bottom: 1px solid #ddd;
-        padding-bottom: 10px;
-        margin-bottom: 30px;
-        margin-top:20px
-    }
+    footer {
+     margin-top: 200px !important;
+}
+    .cart-header {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+    margin-top: 20px;
+}
+
+.cart-count-badge {
+    position: flex;
+    left: 0px;
+    display: inline-block;
+    background-color: red;
+    color: white;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 12px;
+    line-height: 20px;
+    font-weight: bold;
+    margin-left: 10px; 
+}
 
     .cart-header h2 {
         font-size: 1.5rem !important;
@@ -50,7 +68,6 @@
         border-collapse: collapse;
         font-family: 'Arial', sans-serif;
         background-color: #fff;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         overflow: hidden;
         border-radius: 1px;
     }
@@ -102,16 +119,9 @@
         padding: 15px;
         text-align: right;
     }
-    .btn-danger,
-.btn-warning {
-    opacity: 0.7;
-    transition: opacity 0.3s ease-in-out;
-}
 
-.btn-danger:hover, 
-.btn-warning:hover {
-    opacity: 1; 
-}
+
+
 
 .quantity-container {
     display: flex;
@@ -124,23 +134,23 @@
 }
 
 .quantity-container button {
-    width: 40px;
-    height: 40px;
-    border: none;
+    width: 30px;
+    height: 30px;
+    border: 1px;
     background-color: #f8f9fa;
     color: #333;
-    font-weight: bold;
+    font-weight: lighter;
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
 }
 .quantity-container input.quantity-input {
-    width: 60px;
-    height: 40px;
+    width: 50px;
+    height: 30px;
     text-align: center;
-    border: none;
+    border: 1px;
     outline: none;
     font-size: 1rem;
-    font-weight: bold;
+    font-weight: lighter;
     box-shadow: none;
     -moz-appearance: textfield; 
     -webkit-appearance: none; 
@@ -152,31 +162,105 @@
 .quantity-container input.quantity-input::-webkit-outer-spin-button {
     -webkit-appearance: none; 
     margin: 0; }
+    .cart-count-badge {
+    position: relative;
+    display: inline-block;
+    background-color: red;
+    color: white;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 12px;
+    line-height: 20px;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+
+.deletebtn, .detailbtn {
+    display: inline-flex;
+    align-items: center;
+    padding: 5px 10px;
+    text-decoration: none; 
+    font-size: 14px;
+}
+
+.deletebtn {
+    background-color: #f44336; 
+    color: white;
+    border: 1px solid #f44336;
+}
+
+
+.detailbtn {
+    background-color: #fff;
+    color: black;
+    border: 1px solid black;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.detailbtn:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+.deletebtn i, .detailbtn i {
+    margin-right: 5px; 
+}
+
 
 </style>
 <script>
     document.addEventListener("DOMContentLoaded", () => {
-        document.querySelectorAll(".increment").forEach(btn => {
-            btn.addEventListener("click", function () {
-                const input = this.closest("td").querySelector(".quantity-input");
-                input.value = parseInt(input.value) + 1;
-            });
-        });
-        document.querySelectorAll(".decrement").forEach(btn => {
-            btn.addEventListener("click", function () {
-                const input = this.closest("td").querySelector(".quantity-input");
-                const currentValue = parseInt(input.value);
-                if (currentValue > 1) {
-                    input.value = currentValue - 1;
-                }
-            });
+    document.querySelectorAll(".increment").forEach(btn => {
+        btn.addEventListener("click", function () {
+            const input = this.closest("td").querySelector(".quantity-input");
+            input.value = parseInt(input.value) + 1;  
+            updateCartCount();
         });
     });
+
+    document.querySelectorAll(".decrement").forEach(btn => {
+        btn.addEventListener("click", function () {
+            const input = this.closest("td").querySelector(".quantity-input");
+            const currentValue = parseInt(input.value);
+            if (currentValue > 1) {
+                input.value = currentValue - 1;  
+            }
+            updateCartCount();
+        });
+    });
+
+    
+    const deleteButtons = document.querySelectorAll(".btn-danger");
+    deleteButtons.forEach(btn => {
+        btn.addEventListener("click", function () {
+            setTimeout(updateCartCount, 500); 
+        });
+    });
+
+    function updateCartCount() {
+        let totalItems = 0;
+        document.querySelectorAll(".quantity-input").forEach(input => {
+            totalItems += parseInt(input.value);
+        });
+        document.getElementById("cart-count").innerText = totalItems;
+    }
+
+    updateCartCount();
+});
+
+
 </script>
 
 <div class="container mt-5">
-<div class="cart-header d-flex justify-content-between align-items-center">
+<div class="cart-header ">
     <h2>Giỏ hàng của bạn</h2>
+    <div class="cart-count-badge">
+        <?php $cartCount = array_sum(array_column($carts, 'quantity')); ?>
+        <span id="cart-count"><?= $cartCount ?></span> <!-- Cart item count -->
+    </div>
 </div>
     <form action="<?php echo ROOT_URL . '?ctl=update-cart'; ?>" method="POST">
     <div class="table-responsive">
@@ -188,10 +272,10 @@
     <?php unset($_SESSION['message']);?>
 <?php endif; ?>
 
-            <table class="table table-bordered table-striped align-middle">
-                <thead class="table-primary">
+            <table class="table table-bordered align-middle">
+                <thead class="table">
                     <tr>
-                        <th scope="col">#ID</th>
+                        <th scope="col">STT</th>
                         <th scope="col">Hình ảnh</th>
                         <th scope="col">Tên sản phẩm</th>
                         <th scope="col">Giá</th>
@@ -201,14 +285,16 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach($carts as $id => $cart) : ?>
+                    <?php
+                    $stt=1;
+                    foreach($carts as $id => $cart) : ?>
                     <tr>
-                        <th scope="row"><?= $id ?></th>
+                        <th scope="row"><?= $stt++ ?></th>
                         <td>
-                            <img src="<?= ROOT_URL."/productimages/". $cart['image'] ?>" alt="" class="img-thumbnail" style="width: 80px; height: auto" />
+                            <img src="<?= ROOT_URL."/productimages/". $cart['image'] ?>" alt=""  style="width: 80px; height: auto" />
                         </td>
                         <td><?= $cart['name'] ?></td>
-                        <td><?= number_format($cart['price']) ?>VNĐ</td>
+                        <td ><?= number_format($cart['price']) ?>VNĐ</td>
                         <td>
                             <div class="quantity-container">
                                 <button type="button" class="decrement" data-id="<?= $id ?>">-</button>
@@ -218,20 +304,21 @@
                         </td>
 
 
-                        <td><?= number_format($cart['price'] * $cart['quantity']) ?>VNĐ</td>
+                        <td class="text-danger"><?= number_format($cart['price'] * $cart['quantity']) ?>VNĐ</td>
                         <td>
-                        <a href="<?= ROOT_URL . '?ctl=delete-cart&id=' . $id?>" type="button" class="btn btn-danger btn-sm">
-                                <i class="bi bi-trash"></i> Xóa
-                            </a>
-                            <a href="<?= ROOT_URL . '?ctl=details&id=' . $id?>" type="button" class="btn btn-warning btn-sm">
+                        <a href="<?= ROOT_URL . '?ctl=details&id=' . $id?>" type="button" class="detailbtn">
                                 <i class="bi bi-search"></i> Chi tiết
                             </a>
+                        <a href="<?= ROOT_URL . '?ctl=delete-cart&id=' . $id?>" type="button" class="deletebtn ">
+                                <i class="bi bi-trash"></i> Xóa
+                            </a>
+                            
                         </td>
                     </tr>
                     <?php endforeach ?>
                 </tbody>
                 <!-- Tổng tiền -->
-                <tfoot class="table-light">
+                <tfoot class="table">
                     <tr>
                         <td colspan="5" class="text-end fw-bold">Tổng tiền:</td>
                         <td colspan="2" class="fw-bold text-danger"><?= number_format($sumPrice)?>VNĐ</td>

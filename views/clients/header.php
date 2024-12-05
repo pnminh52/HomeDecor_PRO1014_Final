@@ -13,7 +13,6 @@
     <style>
         .nav-item.dropdown:hover .dropdown-menu {
             display: block;
-            opacity: 1;
         }
 
         .input-group .form-control {
@@ -45,6 +44,23 @@
             font-size: 14px;
             color:rgb(0, 0, 0); 
         }
+        .cart-icon {
+    position: relative; /* Position relative to allow absolute positioning of the badge */
+    display: inline-block; /* Ensure the icon and badge are inline */
+}
+
+.quantity-badge {
+    position: absolute; /* Position the badge absolutely */
+    top: -10px; /* Adjust this value to position it correctly */
+    right: -15px; /* Adjust this value to position it correctly */
+    background-color: red; /* Background color of the badge */
+    color: white; /* Text color */
+    border-radius: 50%; /* Make it circular */
+    padding: 5px 8px; /* Padding for the badge */
+    font-size: 12px; /* Font size */
+    line-height: 1; /* Line height */
+    text-align: center; /* Center text */
+}
     </style>
     <div class="top-bar">
         <div class="container">
@@ -82,28 +98,26 @@
                             <a class="nav-link" href="<?= ROOT_URL . '?ctl=shop'?>">Cửa hàng</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/homedecorfinal/contact">Liên hệ</a>
+                            <a class="nav-link" >Liên hệ</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-warning" href="/homedecorfinal/decoration">Thiết kế nội thất</a>
+                            <a class="nav-link text-warning" >Thiết kế nội thất</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/homedecorfinal/inspiration">Góc cảm hứng</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="<?= ROOT_URL . '?ctl=view-cart' ?>">Giỏ hàng (<?= $_SESSION['totalQuantity']?? '0' ?>)</a>
-                        </li>
+    <a class="nav-link" href="<?= ROOT_URL . '?ctl=view-cart' ?>">
+        <div class="cart-icon">
+            <i class="bi bi-cart-plus"></i>
+            <span class="quantity-badge"><?= $_SESSION['totalQuantity'] ?? '0' ?></span>
+        </div>
+    </a>
+</li>
                         <li class="nav-item dropdown">
     <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="authDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
         <i class="bi bi-person me-1"></i>
-        
     </a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="authDropdown">
         <?php if (isset($_SESSION['user'])): ?>
             <!-- Đã đăng nhập -->
-            <li>
-                <a class="dropdown-item" href="<?= ROOT_URL . '?ctl=profile' ?>">Hồ sơ</a>
-            </li>
             <li>
                 <a class="dropdown-item" href="<?= ROOT_URL . '?ctl=list-order' ?>">Đơn hàng</a>
             </li>

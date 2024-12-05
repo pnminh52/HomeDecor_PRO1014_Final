@@ -49,7 +49,7 @@ public function showAllProducts() {
   $sort = $_GET['sort'] ?? 'price';  
   $order = $_GET['order'] ?? 'ASC'; 
   $products = (new Product)->showAllProducts($sort, $order);
-  $title = "Cửa hàng";
+  $title = "Sản phẩm";
   $categories = (new Category)->all();
   return view('clients.products.all', compact('products', 'title', 'categories', 'sort', 'order'));
 }
