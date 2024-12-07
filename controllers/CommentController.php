@@ -13,7 +13,7 @@ public function list(){
      $id   = $_GET['id'];
 
      $comments = (new Comment)->listCommentInProduct($id);
-        $_SESSION['URI'] = $_SERVER['REQUEST_URI'];
+        $_SESSION['uri_comment'] = $_SERVER['REQUEST_URI'];
      return view('admin.comments.list', compact('comments'));
 }
 }
@@ -23,6 +23,6 @@ public function updateActive(){
     $value = $_GET['value'] ? 0 : 1;
     (new Comment)->updateActive($id,$active);
 
-    return header("location:  " . $_SESSION['URI']);
+    return header("location:  " . $_SESSION['uri_comment']);
 }
 ?>
