@@ -4,9 +4,9 @@
 
 
 
+// ông xem giúp tôi 148 trong phần details của clients , ko thấy hiển thị  bảng để thêm comment , 
 
-
-
+vẫn có thể thêm comment trên sql
 
 
 

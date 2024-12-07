@@ -32,6 +32,7 @@ class Category extends BaseModel {
         $sql = "DELETE FROM categories WHERE id=:id";
         $stmt = $this->conn->prepare($sql);
         $stmt->execute(['id'=>$id]);
+        
     }
     //Search categories with id
     public function find($id){

@@ -141,7 +141,30 @@ h2 {
                 </p>
             </div>
         </div>
+
+
+        Bình luận
+
+
+         <div class="comment">
+         <?php foreach($comments as $comment): ?>
+            <p>
+                <b><?= $comment['fullname'] ?></b> <?= date('d-m-Y H:i:s', strtotime
+                ($comment['created_at']))   ?><br>
+                <?= $comment['content'] ?>
+            </p>
+            <?php endforeach ?>
+            
+        <?php if (isset($_SESSION['user'])): ?>
+            <form action="" method="post">
+                <textarea name="content" rows="3" cols="60" require id=""></textarea>
+                <br><button type="submit">Gửi</button>
+            </form>
+            <?php else: ?>
+                <div>Bạn cần<b> <a href="<?= ROOT_URL . '?ctl=login'?>">đăng nhập</a> </b>để bình luận</div>
+            <?php endif ?>
     </div>
+    
     <div class="container mt-5">
 <h2 class="prd-title">Các sản phẩm khác có liên quan</h2>
 <div class="row g-4">

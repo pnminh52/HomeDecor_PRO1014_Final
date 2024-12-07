@@ -24,6 +24,15 @@
    public function show(){
     $id = $_GET['id']; 
     $product = (new Product)->find($id); 
+
+    //thêm comment
+    if ($_SERVER['REQUEST_METHOD'] === "POST") {
+      $data = $_POST; 
+      // thêm product_id và user_id
+      $data['product_id'] = $id;
+      $data['user_id'] = $_SESSION['user']['id'];
+       (new Comment)->create($data);
+    }
     $title = $product['name']; 
     $categories = (new Category)->all();
     $productReleads= (new Product)->listProductRelead($product['category_id'],$id); 
@@ -33,9 +42,13 @@
 
     $_SESSION['totalQuantity'] =(new CartController)->totalSumQuantity();
 
+    // lấy danh sách comments
+    $comments = (new Comment)->listCommentInProduct($id);
     return view(
-        'clients.products.details', compact('product', 'title', 'categories','productReleads')); 
+        'clients.products.details', 
+        compact('product', 'title', 'categories','productReleads', 'comments')); 
 }
+
 
 public function searchs() {
   $query = $_GET['query'];
