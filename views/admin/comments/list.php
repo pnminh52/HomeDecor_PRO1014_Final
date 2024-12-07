@@ -7,6 +7,7 @@
                 <th scope="col">#ID</th>
                 <th scope="col">Họ tên</th>
                 <th scope="col">Nội dung</th>
+                <th scope="col">Hoạt động</th>
                 <th scope="col">
                     hành động
                 </th>
@@ -15,12 +16,16 @@
         <tbody>
             <?php foreach ($comments as $comment) : ?>
                 <tr>
-            <th scope="row"><?= $pro['id'] ?></th>
+            <th scope="row"><?= $comment['id'] ?></th>
             <td><?= $comment['id']?></td>
             <td><?= $comment['fullname']?></td>
             <td><?= $comment['content']?></td>
+            <td><?= $comment['active'] ? 'hiện' : 'ẩn' ?></td>
             <td>
-                <a href="<?= ADMIN_URL . '?ctl=comment-detail&id=' . $pro ['id']?>" class="btn btn-primary">Chi tiết</a>
+                <a href="<?= ADMIN_URL . '?ctl=active-comment&id=&' . 
+                $comment ['id'] .'&value'. $comment['active'] ?>" 
+                class="btn btn-primary"><?= 
+                $comment['active'] ? 'hiện' : 'ẩn' ?></a>
             </td>
                 </tr>
                 <?php endforeach ?>

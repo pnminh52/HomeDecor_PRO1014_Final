@@ -41,6 +41,6 @@ match ($ctl){
     //!!Comment
     'product-comment' => (new CommentController)->index(),
     'comment-detail' => (new CommentController)->list(),
-
+    'active-comment' => (new CommentController ) ->updateActive(),
 };
 
