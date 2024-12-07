@@ -13,7 +13,8 @@ return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 // hiển thị các sản phẩm có  bình luận
 public function listProductHasComments(){
-    $sql = "SELECT p.id, name, count(c.id) 'count' FROM products p JOIN comments c ON p.id=c.product_id";
+    $sql = "SELECT p.id, name, count(c.id) 'count' FROM products p JOIN 
+    comments c ON p.id=c.product_id GROUP BY p.id, name";
     $stmt = $this->conn->prepare($sql);
     $stmt->execute();
     return $stmt->fetchAll(PDO::FETCH_ASSOC);

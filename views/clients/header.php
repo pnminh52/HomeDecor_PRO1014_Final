@@ -125,6 +125,9 @@
                 <a class="dropdown-item" href="<?= ROOT_URL . '?ctl=list-order' ?>">Đơn hàng</a>
             </li>
             <li>
+                <a class="dropdown-item" href="<?= ROOT_URL . '?ctl=product-comment' ?>">Bình luận</a>
+            </li>
+            <li>
                 <a class="dropdown-item" href="<?= ROOT_URL . '?ctl=logout' ?>">Đăng xuất</a>
             </li>
         <?php else: ?>
