@@ -118,6 +118,9 @@
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="authDropdown">
         <?php if (isset($_SESSION['user'])): ?>
             <!-- Đã đăng nhập -->
+             <li>
+                <a class="dropdown-item" href="">Yêu thích</a>
+             </li>
             <li>
                 <a class="dropdown-item" href="<?= ROOT_URL . '?ctl=list-order' ?>">Đơn hàng</a>
             </li>
