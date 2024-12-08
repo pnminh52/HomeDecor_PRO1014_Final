@@ -143,21 +143,21 @@ h2 {
         </div>
 
 
-        Bình luận
+        <h2 class="prd-title">Bình luận</h2>
 
 
          <div class="comment">
          <?php foreach($comments as $comment): ?>
             <p>
-                <b><?= $comment['fullname'] ?></b> <?= date('d-m-Y H:i:s', strtotime
-                ($comment['created_at']))   ?><br>
+                <b><?= $comment['fullname'] ?></b> (<?= date('d-m-Y H:i:s', strtotime
+                ($comment['created_at']))   ?>) <br>
                 <?= $comment['content'] ?>
             </p>
             <?php endforeach ?>
             
         <?php if (isset($_SESSION['user'])): ?>
             <form action="" method="post">
-                <textarea name="content" rows="3" cols="60" require id=""></textarea>
+                <textarea name="content" placeholder="Nhập bình luận của bạn" rows="3" cols="60" require id=""></textarea>
                 <br><button type="submit">Gửi</button>
             </form>
             <?php else: ?>
