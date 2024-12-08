@@ -1,23 +1,24 @@
 <?php include_once ROOT_DIR . "views/admin/header.php" ?>
 
 <div class="container">
-    <div class="table">
-        <thead>
+    <table class="table table-bordered align-middle">
+        <thead class="table">
             <tr>
-                <th scope="col">#ID</th>
+                <th scope="col">STT</th>
                 <th scope="col">Họ tên</th>
                 <th scope="col">Nội dung</th>
-                <th scope="col">Hoạt động</th>
+                <th scope="col">Trạng thái</th>
                 <th scope="col">
-                    hành động
+                    Hành động
                 </th>
                </tr>
         </thead>
-        <tbody>
-            <?php foreach ($comments as $comment) : ?>
+        <tbody class="table">
+            <?php
+            $stt=1;
+            foreach ($comments as $comment) : ?>
                 <tr>
-            <th scope="row"><?= $comment['id'] ?></th>
-            <td><?= $comment['id']?></td>
+            <th scope="row"><?= $stt++ ?></th>
             <td><?= $comment['fullname']?></td>
             <td><?= $comment['content']?></td>
             <td><?= $comment['active'] ? 'hiện' : 'ẩn' ?></td>
@@ -31,7 +32,7 @@
                 <?php endforeach ?>
         </tbody>
     </table>
-</div>
+</ta>
 
 
 

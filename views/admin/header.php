@@ -80,6 +80,9 @@
                             <a class="nav-link" href="<?= ADMIN_URL . '?ctl=list-order' ?>">Đơn hàng</a>
                         </li>
                         <li class="nav-item">
+                        <a class="nav-link" href="<?= ADMIN_URL . '?ctl=product-comment' ?>">Bình luận</a>
+                    </li>
+                        <li class="nav-item">
                             <a class="nav-link"href="/homedecorfinal/">Client</a>
                         </li>
                      
