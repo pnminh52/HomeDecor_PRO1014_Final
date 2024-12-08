@@ -20,6 +20,7 @@ public function listProductHasComments(){
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 }
+//!! hàm này khi submit và reload lại trang sẽ tự động đẩy sữ liệu cũ lên 
 public function create($data){
     $sql = "INSERT INTO comments(user_id, product_id, content) VALUES(:user_id, :product_id, :content)";
     $stmt = $this->conn->prepare($sql);
@@ -27,13 +28,16 @@ public function create($data){
 }
 
 
-public function updateActive(){
-    $sql = "UPDATE comment  SET active=:active WHERE id=:id ";
+//!! fix lai ham update active
+public function updateActive($id, $active) {
+    $sql = "UPDATE comments SET active = :active WHERE id = :id";
     $stmt = $this->conn->prepare($sql);
-    $stmt->execute(['id' => $id, 'active' => $active]); 
+    $stmt->execute(['id' => $id, 'active' => $active]);
 }
 
+
 // hiển thị bình luận ở client
+//!! hàm này xử lý bình luận bên phía người dùng
 public function listCommentInProductClient ($product_id) {
 
     $sql = "SELECT c.*, fullname FROM comments c JOIN users u ON u.id=c.user_id
