@@ -14,14 +14,15 @@ public function list(){
 
      $comments = (new Comment)->listCommentInProduct($id);
         $_SESSION['uri_comment'] = $_SERVER['REQUEST_URI'];
-     return view('admin.comments.list', compact('comments'));
+     return view('admin.comment.list', compact('comments'));
 }
 
 // hiển thị , ẩn bình luận 
 //!! undefined updateActive va $active
 public function updateActive(){
     $id = $_GET['id'];
-    $active = $_GET['value'] ? 0 : 1;
+    // $active = $_GET['value'] ? 0 : 1;
+    $active = $_GET['value'] == 1 ? 0 : 1;
     (new Comment)->updateActive($id, $active);
 
     return header("location:  " . $_SESSION['uri_comment']);

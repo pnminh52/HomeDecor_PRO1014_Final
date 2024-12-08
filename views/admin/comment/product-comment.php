@@ -5,34 +5,28 @@
         <thead class="table">
             <tr>
                 <th scope="col">STT</th>
-                <th scope="col">Họ tên</th>
-                <th scope="col">Nội dung</th>
-                <th scope="col">Trạng thái</th>
-                <th scope="col">
-                    Hành động
-                </th>
+                <th scope="col">Tên sản phẩm</th>
+                <th scope="col">Số lượng bình luận</th>
+                <th scope="col">Hành động</th>
+              
                </tr>
         </thead>
         <tbody class="table">
-            <?php
+            <?php 
             $stt=1;
-            foreach ($comments as $comment) : ?>
+            foreach ($products as $pro) : ?>
                 <tr>
             <th scope="row"><?= $stt++ ?></th>
-            <td><?= $comment['fullname']?></td>
-            <td><?= $comment['content']?></td>
-            <td><?= $comment['active'] ? 'hiện' : 'ẩn' ?></td>
+            <td><?= $pro['name']?></td>
+            <td><?= $pro['count']?></td>
             <td>
-                <a href="<?= ADMIN_URL . '?ctl=active-comment&id=&' . 
-                $comment ['id'] .'&value'. $comment['active'] ?>" 
-                class="btn btn-primary"><?= 
-                $comment['active'] ? 'hiện' : 'ẩn' ?></a>
+                <a href="<?= ADMIN_URL . '?ctl=comment-detail&id=' . $pro ['id']?>" class="btn btn-primary">Chi tiết</a>
             </td>
                 </tr>
                 <?php endforeach ?>
         </tbody>
     </table>
-</ta>
+</tabl>
 
 
 
