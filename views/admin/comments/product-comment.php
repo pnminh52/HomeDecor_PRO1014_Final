@@ -1,18 +1,17 @@
 <?php include_once ROOT_DIR . "views/admin/header.php" ?>
 
 <div class="container">
-    <div class="table">
-        <thead>
+    <table class="table table-bordered align-middle">
+        <thead class="table">
             <tr>
                 <th scope="col">#ID</th>
                 <th scope="col">Tên sản phẩm</th>
                 <th scope="col">Số lượng bình luận</th>
                 <th scope="col">
-
                 </th>
                </tr>
         </thead>
-        <tbody>
+        <tbody class="table">
             <?php foreach ($products as $pro) : ?>
                 <tr>
             <th scope="row"><?= $pro['id'] ?></th>
@@ -25,7 +24,7 @@
                 <?php endforeach ?>
         </tbody>
     </table>
-</div>
+</tabl>
 
 
 
