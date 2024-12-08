@@ -13,6 +13,7 @@ require_once __DIR__ ."/controllers/ProductController.php";
 require_once __DIR__ . "/controllers/CartController.php";
 require_once __DIR__ . "/controllers/AuthController.php";
 require_once __DIR__ ."/controllers/OrderController.php";
+require_once __DIR__ ."/controllers/CommentController.php";
 
 $ctl=$_GET['ctl']??'';
 match ($ctl){
@@ -37,5 +38,6 @@ match ($ctl){
     //!!User
     'list-order'=>(new OrderController)->showOrderUser(),
     'order-detail-users'=>(new OrderController)->detailOrderUser(),
+
 
 };

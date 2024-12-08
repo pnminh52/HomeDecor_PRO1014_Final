@@ -1,6 +1,9 @@
 <?php include_once ROOT_DIR . "views/admin/header.php" ?>
 
 <div class="container">
+<div class="category-header">
+    <h2>Chi tiết bình luận </h2>
+    </div>
     <table class="table table-bordered align-middle">
         <thead class="table">
             <tr>
@@ -28,7 +31,7 @@
                 class="btn btn-primary"><?= 
                 $comment['active'] ? 'hiện' : 'ẩn' ?></a> -->
                 <a href="<?= ADMIN_URL . '?ctl=active-comment&id=' . $comment['id'] . '&value=' . $comment['active'] ?>"
-   class="btn btn-primary">
+   class="btndanger">
    <?= $comment['active'] ? 'ẩn' : 'hiện' ?>
 </a>
 
@@ -53,14 +56,14 @@
 <?php include_once ROOT_DIR . "views/admin/footer.php" ?>
 
 <style>
-    .cart-header h2 {
+    .category-header h2 {
         font-size: 1.5rem !important;
         font-weight: thin !important;
         margin: 0;
         font-family: Arial, sans-serif;
     }
 
-    .cart-header {
+    .category-header {
         display: flex;
         align-items: center;
         border-bottom: 1px solid #ddd;
