@@ -96,7 +96,7 @@
     }
 
     /* Nút "Xóa danh mục" */
-    .btndanger {
+    a.btndanger {
         background-color: rgb(202, 16, 16);
         color: white;
         padding: 10px 20px;

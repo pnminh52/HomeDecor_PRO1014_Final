@@ -1,5 +1,50 @@
 <?php include_once ROOT_DIR . "views/clients/header.php" ?>
 <style>
+    .comment {
+    margin-top: 20px;
+    padding: 20px;
+}
+
+.comment p {
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.comment b {
+    font-weight: bold;
+    color: #000;
+}
+
+.comment textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    resize: none;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.comment textarea:focus {
+    outline: none;
+    border-color:rgb(0, 0, 0);
+}
+
+.comment button {
+    background-color:rgb(0, 0, 0);
+    color: white;
+    font-size: 1rem;
+    border: none;
+    padding: 5px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+
     .product-box {
     text-align: center;
     padding: 10px;

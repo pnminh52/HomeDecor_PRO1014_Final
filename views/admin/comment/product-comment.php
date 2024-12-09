@@ -20,7 +20,7 @@
             <td><?= $pro['name']?></td>
             <td><?= $pro['count']?></td>
             <td>
-                <a href="<?= ADMIN_URL . '?ctl=comment-detail&id=' . $pro ['id']?>" class="btn btn-primary">Chi tiết</a>
+                <a href="<?= ADMIN_URL . '?ctl=comment-detail&id=' . $pro ['id']?>" class="btn btnedit">Xem chi tiết</a>
             </td>
                 </tr>
                 <?php endforeach ?>
@@ -73,7 +73,7 @@
     }
 
     /* Nút "Sửa danh mục" */
-    .btnedit {
+    a.btnedit {
         background-color: #007bff;
         color: white;
         padding: 10px 20px;
